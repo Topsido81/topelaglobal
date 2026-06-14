@@ -306,6 +306,19 @@ textarea{
   font-weight:700;
 }
 
+  .hidden-form{
+  display:none;
+}
+
+.candidateForm{
+  margin-top:25px;
+  gap:14px;
+}
+
+.candidateForm.active-form{
+  display:grid;
+}
+
 .founder{
   display:grid;
   grid-template-columns:320px 1fr;
@@ -616,13 +629,13 @@ footer a{
       <h3>Select Application Type</h3>
 
       <select id="formSelector">
-        <option value="">Choose application type</option>
-        <option value="workForm">Work / Recruitment / Work Visa</option>
-        <option value="studyForm">Study Visa Support</option>
-        <option value="touristForm">Tourist / Visitor Visa Support</option>
-        <option value="aupairForm">Au Pair Visa Support</option>
-        <option value="consultationForm">General Consultation</option>
-      </select>
+  <option value="">Choose application type</option>
+  <option value="workForm">Work / Recruitment / Work Visa</option>
+  <option value="studyForm">Study Visa Support</option>
+  <option value="touristForm">Tourist / Visitor Visa Support</option>
+  <option value="aupairForm">Au Pair Visa Support</option>
+  <option value="consultationForm">General Consultation</option>
+</select>
 
       <form id="workForm" class="candidateForm hidden-form">
         <h3>Work / Recruitment / Work Visa Form</h3>
@@ -985,7 +998,32 @@ allCandidateForms.forEach(form => {
       console.error(error);
       return;
     }
+<script>
+document.addEventListener("DOMContentLoaded", function(){
 
+  const formSelector = document.getElementById("formSelector");
+  const allCandidateForms = document.querySelectorAll(".candidateForm");
+
+  if(formSelector){
+    formSelector.addEventListener("change", function(){
+
+      allCandidateForms.forEach(function(form){
+        form.classList.remove("active-form");
+        form.classList.add("hidden-form");
+      });
+
+      const selectedForm = document.getElementById(this.value);
+
+      if(selectedForm){
+        selectedForm.classList.remove("hidden-form");
+        selectedForm.classList.add("active-form");
+      }
+
+    });
+  }
+
+});
+</script>
     status.textContent = "✅ Submitted successfully.";
     this.reset();
   });
