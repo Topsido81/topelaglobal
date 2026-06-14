@@ -599,135 +599,157 @@ footer a{
   <div class="two-col">
     <div>
       <h2>Candidate Registration</h2>
-      <p>Are you a qualified candidate looking for legitimate work opportunities abroad? Register your details and we will contact suitable candidates when verified opportunities is available.</p>
+      <p>Register for work recruitment, study visa support, tourist visa support, or au pair guidance.</p>
 
-      <ul>
-        <li>No fake job promises</li>
-        <li>No illegal migration routes</li>
-        <li>No guaranteed visa claims</li>
-        <li>Only proper recruitment channels</li>
-      </ul>
+      <div class="notice">
+        TOPELA GLOBAL does not guarantee jobs, visas, or migration approval. We only support proper documentation, screening, guidance, and lawful application pathways.
+      </div>
     </div>
 
     <div class="panel" id="candidate-form">
       <h3>Register Your Interest</h3>
 
-     <form id="candidateForm" enctype="multipart/form-data">
-  <input name="full_name" type="text" placeholder="Full name" required>
-  <input name="email" type="email" placeholder="Email" required>
-  <input name="whatsapp" type="tel" placeholder="WhatsApp number" required>
-  <input name="country" type="text" placeholder="Current country" required>
-  <input name="date_of_birth" type="text" placeholder="Date of birth e.g. 12/05/1994" required>
+      <form id="candidateForm" enctype="multipart/form-data">
+        <input name="full_name" type="text" placeholder="Full name" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="whatsapp" type="tel" placeholder="WhatsApp number" required>
+        <input name="country" type="text" placeholder="Current country" required>
 
-  <select name="gender" required>
-    <option value="">Select gender</option>
-    <option>Male</option>
-    <option>Female</option>
-    <option>Prefer not to say</option>
-  </select>
+        <select name="application_type" required>
+          <option value="">What are you applying for?</option>
+          <option>Work / Recruitment</option>
+          <option>Study Visa Support</option>
+          <option>Tourist Visa Support</option>
+          <option>Au Pair Visa Support</option>
+          <option>General Consultation</option>
+        </select>
 
-  <select name="industry" required>
-    <option value="">Select industry</option>
-    <option>Healthcare / Care</option>
-    <option>Hospitality</option>
-    <option>Construction</option>
-    <option>Agriculture</option>
-    <option>Logistics</option>
-    <option>Manufacturing</option>
-    <option>Domestic / Facility Support</option>
-    <option>Engineering</option>
-    <option>Other</option>
-  </select>
+        <input name="target_country" type="text" placeholder="Target country e.g. Romania, Netherlands, Germany" required>
 
-  <input name="desired_job_role" type="text" placeholder="Desired job role e.g. Care Assistant, Driver, Engineer" required>
-  <input name="years_experience" type="text" placeholder="Years of experience" required>
-  <input name="preferred_country" type="text" placeholder="Preferred country e.g. Netherlands, Germany, Ireland" required>
+        <select name="industry" required>
+          <option value="">Select talent sector</option>
+          <option>Caregivers</option>
+          <option>Construction Workers</option>
+          <option>Warehouse Workers</option>
+          <option>Hospitality Staff</option>
+          <option>Agriculture Workers</option>
+          <option>Drivers / Truck / Forklift</option>
+          <option>Cleaners</option>
+          <option>Factory Workers</option>
+          <option>Security Guards</option>
+          <option>Others</option>
+        </select>
 
-  <select name="education_level" required>
-    <option value="">Highest education level</option>
-    <option>Secondary School</option>
-    <option>Diploma</option>
-    <option>Degree</option>
-    <option>Master's Degree</option>
-    <option>Vocational / Technical Certificate</option>
-    <option>Other</option>
-  </select>
+        <input name="desired_job_role" type="text" placeholder="Desired job role">
+        <input name="years_experience" type="text" placeholder="Years of experience">
+        <input name="date_of_birth" type="text" placeholder="Date of birth">
 
-  <select name="english_level" required>
-    <option value="">English level</option>
-    <option>Basic</option>
-    <option>Intermediate</option>
-    <option>Good</option>
-    <option>Fluent</option>
-  </select>
+        <select name="gender">
+          <option value="">Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Prefer not to say</option>
+        </select>
 
-  <select name="passport_status" required>
-    <option value="">Passport status</option>
-    <option>Valid passport</option>
-    <option>No passport yet</option>
-    <option>Passport expired</option>
-  </select>
+        <select name="passport_status" required>
+          <option value="">Passport status</option>
+          <option>Valid passport</option>
+          <option>No passport yet</option>
+          <option>Passport expired</option>
+        </select>
 
-  <select name="visa_status" required>
-    <option value="">Current visa status</option>
-    <option>No visa yet</option>
-    <option>Schengen visa</option>
-    <option>UK visa</option>
-    <option>EU residence permit</option>
-    <option>Work permit</option>
-    <option>Student visa</option>
-    <option>Other</option>
-  </select>
+        <select name="visa_status">
+          <option value="">Current visa status</option>
+          <option>No visa yet</option>
+          <option>Schengen visa</option>
+          <option>UK visa</option>
+          <option>EU residence permit</option>
+          <option>Work permit</option>
+          <option>Student visa</option>
+          <option>Other</option>
+        </select>
 
-  <select name="driving_license" required>
-    <option value="">Do you have a driving licence?</option>
-    <option>Yes</option>
-    <option>No</option>
-  </select>
+        <input name="highest_qualification" type="text" placeholder="Highest qualification">
+        <input name="preferred_country" type="text" placeholder="Preferred country">
 
-  <select name="current_employment_status" required>
-    <option value="">Current employment status</option>
-    <option>Employed</option>
-    <option>Unemployed</option>
-    <option>Self-employed</option>
-    <option>Student</option>
-  </select>
+        <select name="school_admission_status">
+          <option value="">Study visa: admission status</option>
+          <option>Yes, I have admission</option>
+          <option>I have applied</option>
+          <option>No, I need school guidance</option>
+          <option>Not applicable</option>
+        </select>
 
-  <select name="availability" required>
-    <option value="">When are you available to travel/work?</option>
-    <option>Immediately</option>
-    <option>Within 1 month</option>
-    <option>Within 3 months</option>
-    <option>Within 6 months</option>
-  </select>
+        <select name="proof_of_funds_status">
+          <option value="">Proof of funds status</option>
+          <option>Available</option>
+          <option>Partially available</option>
+          <option>Not available yet</option>
+          <option>Not applicable</option>
+        </select>
 
-  <select name="criminal_record" required>
-    <option value="">Do you have any criminal record?</option>
-    <option>No</option>
-    <option>Yes</option>
-  </select>
+        <select name="sponsor_status">
+          <option value="">Sponsor status</option>
+          <option>Self-sponsored</option>
+          <option>Family sponsor</option>
+          <option>Employer sponsor</option>
+          <option>No sponsor yet</option>
+        </select>
 
-  <textarea name="message" placeholder="Tell us about your experience, skills, certificates and the type of job you want" required></textarea>
+        <select name="english_level">
+          <option value="">English level</option>
+          <option>Basic</option>
+          <option>Intermediate</option>
+          <option>Good</option>
+          <option>Fluent</option>
+        </select>
 
-  <label><strong>Upload CV / Resume PDF</strong></label>
-  <input name="cv_file" type="file" accept=".pdf,.doc,.docx" required>
+        <select name="driving_license">
+          <option value="">Driving licence</option>
+          <option>Yes</option>
+          <option>No</option>
+        </select>
 
-  <label><strong>Upload Passport Bio Page</strong></label>
-  <input name="passport_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+        <select name="travel_history">
+          <option value="">Travel history</option>
+          <option>Never travelled before</option>
+          <option>Travelled within Africa</option>
+          <option>Travelled to Europe</option>
+          <option>Travelled to UK / USA / Canada</option>
+          <option>Other</option>
+        </select>
 
-  <label>
-    <input name="consent" type="checkbox" value="Yes" required>
-    I confirm that my information is correct and I agree to be contacted by TOPELA GLOBAL for legitimate recruitment opportunities.
-  </label>
+        <select name="visa_refusal_history">
+          <option value="">Any previous visa refusal?</option>
+          <option>No</option>
+          <option>Yes</option>
+        </select>
 
-  <button class="btn" type="submit">Submit Registration</button>
-  <p id="candidateStatus"></p>
-</form>
-      <p><small>By submitting, you agree to be contacted by TOPELA GLOBAL about legitimate recruitment opportunities.</small></p>
+        <input name="childcare_experience" type="text" placeholder="Au Pair: childcare experience">
+        <input name="au_pair_experience" type="text" placeholder="Au Pair experience / interest">
+
+        <textarea name="message" placeholder="Tell us about your experience, documents, skills, and what support you need" required></textarea>
+
+        <label><strong>Upload CV / Resume</strong></label>
+        <input name="cv_file" type="file" accept=".pdf,.doc,.docx">
+
+        <label><strong>Upload Passport Bio Page</strong></label>
+        <input name="passport_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+        <label><strong>Upload Extra Supporting Document</strong></label>
+        <input name="extra_documents_file" type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+
+        <label>
+          <input name="consent" type="checkbox" value="Yes" required>
+          I confirm my information is correct and I agree to be contacted by TOPELA GLOBAL.
+        </label>
+
+        <button class="btn" type="submit">Submit Registration</button>
+        <p id="candidateStatus"></p>
+      </form>
     </div>
   </div>
 </section>
-
 <section id="founder">
   <div class="founder">
     <img src="assets/michael-akinsola.jpg"Michael Temitope Akinsola">
@@ -789,12 +811,17 @@ footer a{
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.48.1/dist/umd/supabase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 const SUPABASE_URL = "https://ytspisjrufbdrqkvwjky.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J";
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+function textValue(formData, name){
+  return formData.get(name) || "";
+}
 
 function cleanFileName(fileName){
   return fileName.replace(/[^a-zA-Z0-9._-]/g, "_");
@@ -807,10 +834,7 @@ async function uploadFile(file, folder){
 
   const { error } = await supabaseClient.storage
     .from("candidate-documents")
-    .upload(filePath, file, {
-      cacheControl: "3600",
-      upsert: true
-    });
+    .upload(filePath, file, { upsert: true });
 
   if(error){
     console.warn("Upload failed:", error.message);
@@ -822,10 +846,6 @@ async function uploadFile(file, folder){
     .getPublicUrl(filePath);
 
   return data.publicUrl || "";
-}
-
-function textValue(formData, name){
-  return formData.get(name) || "";
 }
 
 const candidateForm = document.getElementById("candidateForm");
@@ -841,29 +861,37 @@ if(candidateForm){
 
     const cvUrl = await uploadFile(formData.get("cv_file"), "cv");
     const passportUrl = await uploadFile(formData.get("passport_file"), "passport");
+    const extraDocumentsUrl = await uploadFile(formData.get("extra_documents_file"), "extra-documents");
 
     const data = {
       full_name: textValue(formData, "full_name"),
       email: textValue(formData, "email"),
       whatsapp: textValue(formData, "whatsapp"),
       country: textValue(formData, "country"),
-      date_of_birth: textValue(formData, "date_of_birth"),
-      gender: textValue(formData, "gender"),
+      application_type: textValue(formData, "application_type"),
+      target_country: textValue(formData, "target_country"),
       industry: textValue(formData, "industry"),
       desired_job_role: textValue(formData, "desired_job_role"),
       years_experience: textValue(formData, "years_experience"),
-      preferred_country: textValue(formData, "preferred_country"),
-      education_level: textValue(formData, "education_level"),
-      english_level: textValue(formData, "english_level"),
+      date_of_birth: textValue(formData, "date_of_birth"),
+      gender: textValue(formData, "gender"),
       passport_status: textValue(formData, "passport_status"),
       visa_status: textValue(formData, "visa_status"),
+      highest_qualification: textValue(formData, "highest_qualification"),
+      preferred_country: textValue(formData, "preferred_country"),
+      school_admission_status: textValue(formData, "school_admission_status"),
+      proof_of_funds_status: textValue(formData, "proof_of_funds_status"),
+      sponsor_status: textValue(formData, "sponsor_status"),
+      english_level: textValue(formData, "english_level"),
       driving_license: textValue(formData, "driving_license"),
-      current_employment_status: textValue(formData, "current_employment_status"),
-      availability: textValue(formData, "availability"),
-      criminal_record: textValue(formData, "criminal_record"),
+      travel_history: textValue(formData, "travel_history"),
+      visa_refusal_history: textValue(formData, "visa_refusal_history"),
+      childcare_experience: textValue(formData, "childcare_experience"),
+      au_pair_experience: textValue(formData, "au_pair_experience"),
       message: textValue(formData, "message"),
       cv_url: cvUrl,
       passport_url: passportUrl,
+      extra_documents_url: extraDocumentsUrl,
       consent: textValue(formData, "consent") || "Yes"
     };
 
@@ -878,32 +906,6 @@ if(candidateForm){
     }
 
     status.textContent = "✅ Registration submitted successfully.";
-    this.reset();
-  });
-}
-
-const employerForm = document.getElementById("employerForm");
-
-if(employerForm){
-  employerForm.addEventListener("submit", async function(e){
-    e.preventDefault();
-
-    const status = document.getElementById("employerStatus");
-    status.textContent = "Sending enquiry...";
-
-    const data = Object.fromEntries(new FormData(this).entries());
-
-    const { error } = await supabaseClient
-      .from("employers")
-      .insert([data]);
-
-    if(error){
-      status.textContent = "Error: " + error.message;
-      console.error(error);
-      return;
-    }
-
-    status.textContent = "✅ Employer enquiry submitted successfully.";
     this.reset();
   });
 }
