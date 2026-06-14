@@ -712,35 +712,108 @@ footer a{
 
 <script>
 const SUPABASE_URL = "https://ytspisjrufbdrqkvwjky.supabase.co";
-const SUPABASE_ANON_KEY = "YOUR_PUBLISHABLE_KEY_HERE";
+const SUPABASE_ANON_KEY = "sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J";
 
 const supabaseClient = supabase.createClient(
   SUPABASE_URL,
   SUPABASE_ANON_KEY
 );
 
-function formToObject(form){
+function formToObject(form) {
   return Object.fromEntries(new FormData(form).entries());
 }
 
-document.getElementById("candidateForm").addEventListener("submit", async function(e){
-  e.preventDefault();
+/* ==========================
+   Candidate Registration
+========================== */
 
-  const status = document.getElementById("candidateStatus");
-  status.textContent = "Submitting...";
+const candidateForm = document.getElementById("candidateForm");
 
-  const data = formToObject(this);
+if(candidateForm){
 
-  const { error } = await supabaseClient
-    .from("candidates")
-    .insert([data]);
+  candidateForm.addEventListener("submit", async function(e){
 
-  if(error){
-    status.textContent = "Error: " + error.message;
-    console.error(error);
-  }else{
-    status.textContent = "Registration received successfully.";
-    this.reset();
-  }
-});
+    e.preventDefault();
+
+    const status = document.getElementById("candidateStatus");
+
+    status.textContent = "Submitting registration...";
+
+    const data = formToObject(this);
+
+    try {
+
+      const { error } = await supabaseClient
+        .from("candidates")
+        .insert([data]);
+
+      if(error){
+        console.error(error);
+        status.textContent = "Error: " + error.message;
+        return;
+      }
+
+      status.textContent =
+        "✅ Registration submitted successfully.";
+
+      this.reset();
+
+    } catch(err){
+
+      console.error(err);
+
+      status.textContent =
+        "Error: " + err.message;
+    }
+
+  });
+
+}
+
+/* ==========================
+   Employer Enquiry
+========================== */
+
+const employerForm = document.getElementById("employerForm");
+
+if(employerForm){
+
+  employerForm.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const status = document.getElementById("employerStatus");
+
+    status.textContent = "Sending enquiry...";
+
+    const data = formToObject(this);
+
+    try {
+
+      const { error } = await supabaseClient
+        .from("employers")
+        .insert([data]);
+
+      if(error){
+        console.error(error);
+        status.textContent = "Error: " + error.message;
+        return;
+      }
+
+      status.textContent =
+        "✅ Employer enquiry submitted successfully.";
+
+      this.reset();
+
+    } catch(err){
+
+      console.error(err);
+
+      status.textContent =
+        "Error: " + err.message;
+    }
+
+  });
+
+}
 </script>
