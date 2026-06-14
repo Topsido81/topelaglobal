@@ -598,7 +598,7 @@ footer a{
 <section id="candidates" class="light">
   <div class="two-col">
     <div>
-      <h2>Candidate Registration</h2>
+      <h2>Candidate Registration</h2>]
       <p>Are you a qualified candidate looking for legitimate work opportunities abroad? Register your details and we will contact suitable candidates when verified opportunities become available.</p>
 
       <ul>
@@ -612,38 +612,117 @@ footer a{
     <div class="panel" id="candidate-form">
       <h3>Register Your Interest</h3>
 
-      <form id="candidateForm">
-        <input name="full_name" type="text" placeholder="Full name" required>
-        <input name="email" type="email" placeholder="Email" required>
-        <input name="whatsapp" type="tel" placeholder="WhatsApp number" required>
-        <input name="country" type="text" placeholder="Country" required>
+     <form id="candidateForm" enctype="multipart/form-data">
+  <input name="full_name" type="text" placeholder="Full name" required>
+  <input name="email" type="email" placeholder="Email" required>
+  <input name="whatsapp" type="tel" placeholder="WhatsApp number" required>
+  <input name="country" type="text" placeholder="Current country" required>
+  <input name="date_of_birth" type="text" placeholder="Date of birth e.g. 12/05/1994" required>
 
-        <select name="industry" required>
-          <option value="">Select industry</option>
-          <option>Healthcare / Care</option>
-          <option>Hospitality</option>
-          <option>Construction</option>
-          <option>Agriculture</option>
-          <option>Logistics</option>
-          <option>Manufacturing</option>
-          <option>Domestic / Facility Support</option>
-          <option>Other</option>
-        </select>
+  <select name="gender" required>
+    <option value="">Select gender</option>
+    <option>Male</option>
+    <option>Female</option>
+    <option>Prefer not to say</option>
+  </select>
 
-        <input name="years_experience" type="text" placeholder="Years of experience" required>
+  <select name="industry" required>
+    <option value="">Select industry</option>
+    <option>Healthcare / Care</option>
+    <option>Hospitality</option>
+    <option>Construction</option>
+    <option>Agriculture</option>
+    <option>Logistics</option>
+    <option>Manufacturing</option>
+    <option>Domestic / Facility Support</option>
+    <option>Engineering</option>
+    <option>Other</option>
+  </select>
 
-        <select name="passport_status" required>
-          <option value="">Select passport status</option>
-          <option>Valid passport</option>
-          <option>No passport yet</option>
-          <option>Passport expired</option>
-        </select>
+  <input name="desired_job_role" type="text" placeholder="Desired job role e.g. Care Assistant, Driver, Engineer" required>
+  <input name="years_experience" type="text" placeholder="Years of experience" required>
+  <input name="preferred_country" type="text" placeholder="Preferred country e.g. Netherlands, Germany, Ireland" required>
 
-        <textarea name="message" placeholder="Tell us about your experience" required></textarea>
-        <button class="btn" type="submit">Submit Registration</button>
-        <p id="candidateStatus"></p>
-      </form>
+  <select name="education_level" required>
+    <option value="">Highest education level</option>
+    <option>Secondary School</option>
+    <option>Diploma</option>
+    <option>Degree</option>
+    <option>Master's Degree</option>
+    <option>Vocational / Technical Certificate</option>
+    <option>Other</option>
+  </select>
 
+  <select name="english_level" required>
+    <option value="">English level</option>
+    <option>Basic</option>
+    <option>Intermediate</option>
+    <option>Good</option>
+    <option>Fluent</option>
+  </select>
+
+  <select name="passport_status" required>
+    <option value="">Passport status</option>
+    <option>Valid passport</option>
+    <option>No passport yet</option>
+    <option>Passport expired</option>
+  </select>
+
+  <select name="visa_status" required>
+    <option value="">Current visa status</option>
+    <option>No visa yet</option>
+    <option>Schengen visa</option>
+    <option>UK visa</option>
+    <option>EU residence permit</option>
+    <option>Work permit</option>
+    <option>Student visa</option>
+    <option>Other</option>
+  </select>
+
+  <select name="driving_license" required>
+    <option value="">Do you have a driving licence?</option>
+    <option>Yes</option>
+    <option>No</option>
+  </select>
+
+  <select name="current_employment_status" required>
+    <option value="">Current employment status</option>
+    <option>Employed</option>
+    <option>Unemployed</option>
+    <option>Self-employed</option>
+    <option>Student</option>
+  </select>
+
+  <select name="availability" required>
+    <option value="">When are you available to travel/work?</option>
+    <option>Immediately</option>
+    <option>Within 1 month</option>
+    <option>Within 3 months</option>
+    <option>Within 6 months</option>
+  </select>
+
+  <select name="criminal_record" required>
+    <option value="">Do you have any criminal record?</option>
+    <option>No</option>
+    <option>Yes</option>
+  </select>
+
+  <textarea name="message" placeholder="Tell us about your experience, skills, certificates and the type of job you want" required></textarea>
+
+  <label><strong>Upload CV / Resume PDF</strong></label>
+  <input name="cv_file" type="file" accept=".pdf,.doc,.docx" required>
+
+  <label><strong>Upload Passport Bio Page</strong></label>
+  <input name="passport_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+  <label>
+    <input name="consent" type="checkbox" value="Yes" required>
+    I confirm that my information is correct and I agree to be contacted by TOPELA GLOBAL for legitimate recruitment opportunities.
+  </label>
+
+  <button class="btn" type="submit">Submit Registration</button>
+  <p id="candidateStatus"></p>
+</form>
       <p><small>By submitting, you agree to be contacted by TOPELA GLOBAL about legitimate recruitment opportunities.</small></p>
     </div>
   </div>
@@ -708,40 +787,83 @@ footer a{
   </div>
 </footer>
 
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 const SUPABASE_URL = "https://ytspisjrufbdrqkvwjky.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J";
 
-const supabaseClient = supabase.createClient(
-  https://ytspisjrufbdrqkvwjky.supabase.co,
-  sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J
-);
+const supabaseClient = supabase.createClient(https://ytspisjrufbdrqkvwjky.supabase.co, sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J);
 
-function formToObject(form) {
-  return Object.fromEntries(new FormData(form).entries());
+function cleanFileName(fileName){
+  return fileName.replace(/[^a-zA-Z0-9._-]/g, "_");
 }
 
-/* ==========================
-   Candidate Registration
-========================== */
+async function uploadFile(file, folder){
+  if(!file) return "";
+
+  const filePath = `${folder}/${Date.now()}_${cleanFileName(file.name)}`;
+
+  const { error } = await supabaseClient.storage
+    .from("candidate-documents")
+    .upload(filePath, file);
+
+  if(error){
+    throw error;
+  }
+
+  const { data } = supabaseClient.storage
+    .from("candidate-documents")
+    .getPublicUrl(filePath);
+
+  return data.publicUrl;
+}
 
 const candidateForm = document.getElementById("candidateForm");
 
 if(candidateForm){
-
   candidateForm.addEventListener("submit", async function(e){
-
     e.preventDefault();
 
     const status = document.getElementById("candidateStatus");
+    status.textContent = "Submitting registration and uploading documents...";
 
-    status.textContent = "Submitting registration...";
+    try{
+      const formData = new FormData(this);
 
-    const data = formToObject(this);
+      const cvFile = formData.get("cv_file");
+      const passportFile = formData.get("passport_file");
 
-    try {
+      const cvUrl = await uploadFile(cvFile, "cv");
+      const passportUrl = passportFile && passportFile.size > 0
+        ? await uploadFile(passportFile, "passport")
+        : "";
+
+      const data = {
+        full_name: formData.get("full_name"),
+        email: formData.get("email"),
+        whatsapp: formData.get("whatsapp"),
+        country: formData.get("country"),
+        date_of_birth: formData.get("date_of_birth"),
+        gender: formData.get("gender"),
+        industry: formData.get("industry"),
+        desired_job_role: formData.get("desired_job_role"),
+        years_experience: formData.get("years_experience"),
+        preferred_country: formData.get("preferred_country"),
+        education_level: formData.get("education_level"),
+        english_level: formData.get("english_level"),
+        passport_status: formData.get("passport_status"),
+        visa_status: formData.get("visa_status"),
+        driving_license: formData.get("driving_license"),
+        current_employment_status: formData.get("current_employment_status"),
+        availability: formData.get("availability"),
+        criminal_record: formData.get("criminal_record"),
+        message: formData.get("message"),
+        cv_url: cvUrl,
+        passport_url: passportUrl,
+        consent: formData.get("consent")
+      };
 
       const { error } = await supabaseClient
         .from("candidates")
@@ -753,43 +875,28 @@ if(candidateForm){
         return;
       }
 
-      status.textContent =
-        "✅ Registration submitted successfully.";
-
+      status.textContent = "✅ Registration submitted successfully. Your documents have been uploaded.";
       this.reset();
 
-    } catch(err){
-
+    }catch(err){
       console.error(err);
-
-      status.textContent =
-        "Error: " + err.message;
+      status.textContent = "Error: " + err.message;
     }
-
   });
-
 }
-
-/* ==========================
-   Employer Enquiry
-========================== */
 
 const employerForm = document.getElementById("employerForm");
 
 if(employerForm){
-
   employerForm.addEventListener("submit", async function(e){
-
     e.preventDefault();
 
     const status = document.getElementById("employerStatus");
-
     status.textContent = "Sending enquiry...";
 
-    const data = formToObject(this);
+    const data = Object.fromEntries(new FormData(this).entries());
 
-    try {
-
+    try{
       const { error } = await supabaseClient
         .from("employers")
         .insert([data]);
@@ -800,20 +907,13 @@ if(employerForm){
         return;
       }
 
-      status.textContent =
-        "✅ Employer enquiry submitted successfully.";
-
+      status.textContent = "✅ Employer enquiry submitted successfully.";
       this.reset();
 
-    } catch(err){
-
+    }catch(err){
       console.error(err);
-
-      status.textContent =
-        "Error: " + err.message;
+      status.textContent = "Error: " + err.message;
     }
-
   });
-
 }
 </script>
