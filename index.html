@@ -305,7 +305,20 @@ textarea{
   border-radius:10px;
   font-weight:700;
 }
+.hidden-form{
+  display:none !important;
+}
 
+.active-form{
+  display:grid !important;
+  gap:14px;
+  margin-top:25px;
+}
+
+.candidateForm{
+  gap:14px;
+  margin-top:25px;
+}
   .hidden-form{
   display:none;
 }
@@ -620,6 +633,7 @@ footer a{
     <div>
       <h2>Candidate / Visa Registration</h2>
       <p>Choose the support you need. Only the correct form will open.</p>
+
       <div class="notice">
         TOPELA GLOBAL does not guarantee jobs, visas, or approvals. We support lawful recruitment, documentation, guidance, and proper application pathways.
       </div>
@@ -629,14 +643,220 @@ footer a{
       <h3>Select Application Type</h3>
 
       <select id="formSelector">
-  <option value="">Choose application type</option>
-  <option value="workForm">Work / Recruitment / Work Visa</option>
-  <option value="studyForm">Study Visa Support</option>
-  <option value="touristForm">Tourist / Visitor Visa Support</option>
-  <option value="aupairForm">Au Pair Visa Support</option>
-  <option value="consultationForm">General Consultation</option>
-</select>
+        <option value="">Choose application type</option>
+        <option value="workForm">Work / Recruitment / Work Visa</option>
+        <option value="studyForm">Study Visa Support</option>
+        <option value="touristForm">Tourist / Visitor Visa Support</option>
+        <option value="aupairForm">Au Pair Visa Support</option>
+        <option value="consultationForm">General Consultation</option>
+      </select>
 
+      <form id="workForm" class="candidateForm hidden-form">
+        <h3>Work / Recruitment / Work Visa Form</h3>
+        <input name="full_name" type="text" placeholder="Full name" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="whatsapp" type="tel" placeholder="WhatsApp number" required>
+        <input name="country" type="text" placeholder="Current country" required>
+        <input name="target_country" type="text" placeholder="Target country" required>
+
+        <select name="industry" required>
+          <option value="">Select work sector</option>
+          <option>Caregivers</option>
+          <option>Construction Workers</option>
+          <option>Warehouse Workers</option>
+          <option>Hospitality Staff</option>
+          <option>Agriculture Workers</option>
+          <option>Drivers / Truck / Forklift</option>
+          <option>Cleaners</option>
+          <option>Factory Workers</option>
+          <option>Security Guards</option>
+          <option>Others</option>
+        </select>
+
+        <input name="desired_job_role" type="text" placeholder="Desired job role" required>
+        <input name="years_experience" type="text" placeholder="Years of experience" required>
+
+        <select name="passport_status" required>
+          <option value="">Passport status</option>
+          <option>Valid passport</option>
+          <option>No passport yet</option>
+          <option>Passport expired</option>
+          <option>Renewal in progress</option>
+        </select>
+
+        <label>Passport expiry date</label>
+        <input name="passport_expiry_date" type="date">
+
+        <select name="availability" required>
+          <option value="">Availability</option>
+          <option>Immediately</option>
+          <option>Within 1 month</option>
+          <option>Within 3 months</option>
+          <option>Within 6 months</option>
+        </select>
+
+        <textarea name="message" placeholder="Tell us about your work experience and skills" required></textarea>
+        <input type="hidden" name="application_type" value="Work / Recruitment / Work Visa">
+        <input type="hidden" name="visa_category" value="Work Visa">
+
+        <button class="btn" type="submit">Submit Work Application</button>
+        <p class="formStatus"></p>
+      </form>
+
+      <form id="studyForm" class="candidateForm hidden-form">
+        <h3>Study Visa Support Form</h3>
+        <input name="full_name" type="text" placeholder="Full name" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="whatsapp" type="tel" placeholder="WhatsApp number" required>
+        <input name="country" type="text" placeholder="Current country" required>
+        <input name="target_country" type="text" placeholder="Study country" required>
+
+        <select name="education_level" required>
+          <option value="">Highest education level</option>
+          <option>Secondary School / WAEC</option>
+          <option>Diploma</option>
+          <option>Bachelor Degree</option>
+          <option>Master Degree</option>
+          <option>Other</option>
+        </select>
+
+        <select name="school_admission_status" required>
+          <option value="">Admission status</option>
+          <option>I already have admission</option>
+          <option>I have applied</option>
+          <option>I need school admission guidance</option>
+        </select>
+
+        <select name="proof_of_funds_status" required>
+          <option value="">Proof of funds status</option>
+          <option>Available</option>
+          <option>Partially available</option>
+          <option>Not available yet</option>
+          <option>Sponsor will provide</option>
+        </select>
+
+        <select name="sponsor_status" required>
+          <option value="">Sponsor status</option>
+          <option>Self-sponsored</option>
+          <option>Family sponsor</option>
+          <option>No sponsor yet</option>
+        </select>
+
+        <select name="visa_refusal_history" required>
+          <option value="">Previous visa refusal?</option>
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+
+        <textarea name="message" placeholder="Tell us your study goal, course interest, and support needed" required></textarea>
+        <input type="hidden" name="application_type" value="Study Visa Support">
+        <input type="hidden" name="visa_category" value="Study Visa">
+
+        <button class="btn" type="submit">Submit Study Visa Request</button>
+        <p class="formStatus"></p>
+      </form>
+
+      <form id="touristForm" class="candidateForm hidden-form">
+        <h3>Tourist / Visitor Visa Support Form</h3>
+        <input name="full_name" type="text" placeholder="Full name" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="whatsapp" type="tel" placeholder="WhatsApp number" required>
+        <input name="country" type="text" placeholder="Current country" required>
+        <input name="target_country" type="text" placeholder="Country you want to visit" required>
+
+        <select name="passport_status" required>
+          <option value="">Passport status</option>
+          <option>Valid passport</option>
+          <option>No passport yet</option>
+          <option>Passport expired</option>
+        </select>
+
+        <select name="travel_history" required>
+          <option value="">Travel history</option>
+          <option>Never travelled before</option>
+          <option>Travelled within Africa</option>
+          <option>Travelled to Europe</option>
+          <option>Travelled to UK / USA / Canada</option>
+          <option>Other international travel</option>
+        </select>
+
+        <select name="proof_of_funds_status" required>
+          <option value="">Proof of funds status</option>
+          <option>Available</option>
+          <option>Partially available</option>
+          <option>Not available yet</option>
+          <option>Sponsor will provide</option>
+        </select>
+
+        <select name="visa_refusal_history" required>
+          <option value="">Previous visa refusal?</option>
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+
+        <textarea name="message" placeholder="Purpose of visit, planned travel date, and support needed" required></textarea>
+        <input type="hidden" name="application_type" value="Tourist / Visitor Visa Support">
+        <input type="hidden" name="visa_category" value="Tourist / Visitor Visa">
+
+        <button class="btn" type="submit">Submit Tourist Visa Request</button>
+        <p class="formStatus"></p>
+      </form>
+
+      <form id="aupairForm" class="candidateForm hidden-form">
+        <h3>Au Pair Visa Support Form</h3>
+        <input name="full_name" type="text" placeholder="Full name" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="whatsapp" type="tel" placeholder="WhatsApp number" required>
+        <input name="country" type="text" placeholder="Current country" required>
+        <input name="target_country" type="text" placeholder="Preferred au pair country" required>
+
+        <input name="childcare_experience" type="text" placeholder="Childcare experience" required>
+
+        <select name="au_pair_experience" required>
+          <option value="">Au pair experience</option>
+          <option>I have formal childcare experience</option>
+          <option>I have family babysitting experience</option>
+          <option>I am new but interested</option>
+        </select>
+
+        <select name="passport_status" required>
+          <option value="">Passport status</option>
+          <option>Valid passport</option>
+          <option>No passport yet</option>
+          <option>Passport expired</option>
+        </select>
+
+        <select name="visa_refusal_history" required>
+          <option value="">Previous visa refusal?</option>
+          <option>No</option>
+          <option>Yes</option>
+        </select>
+
+        <textarea name="message" placeholder="Tell us why you want to become an au pair" required></textarea>
+        <input type="hidden" name="application_type" value="Au Pair Visa Support">
+        <input type="hidden" name="visa_category" value="Au Pair Visa">
+
+        <button class="btn" type="submit">Submit Au Pair Request</button>
+        <p class="formStatus"></p>
+      </form>
+
+      <form id="consultationForm" class="candidateForm hidden-form">
+        <h3>General Consultation Form</h3>
+        <input name="full_name" type="text" placeholder="Full name" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="whatsapp" type="tel" placeholder="WhatsApp number" required>
+        <input name="country" type="text" placeholder="Current country" required>
+        <input name="target_country" type="text" placeholder="Target country">
+
+        <textarea name="message" placeholder="Tell us what support you need" required></textarea>
+        <input type="hidden" name="application_type" value="General Consultation">
+
+        <button class="btn" type="submit">Submit Consultation Request</button>
+        <p class="formStatus"></p>
+      </form>
+    </div>
+  </div>
+</section>
       <form id="workForm" class="candidateForm hidden-form">
         <h3>Work / Recruitment / Work Visa Form</h3>
         <input name="full_name" type="text" placeholder="Full name" required>
@@ -954,50 +1174,6 @@ function textValue(formData, name){
   return formData.get(name) || "";
 }
 
-allCandidateForms.forEach(form => {
-  form.addEventListener("submit", async function(e){
-    e.preventDefault();
-
-    const status = this.querySelector(".formStatus");
-    status.textContent = "Submitting...";
-
-    const formData = new FormData(this);
-
-    const data = {
-      full_name: textValue(formData, "full_name"),
-      email: textValue(formData, "email"),
-      whatsapp: textValue(formData, "whatsapp"),
-      country: textValue(formData, "country"),
-      application_type: textValue(formData, "application_type"),
-      visa_category: textValue(formData, "visa_category"),
-      target_country: textValue(formData, "target_country"),
-      industry: textValue(formData, "industry"),
-      desired_job_role: textValue(formData, "desired_job_role"),
-      years_experience: textValue(formData, "years_experience"),
-      passport_status: textValue(formData, "passport_status"),
-      passport_expiry_date: textValue(formData, "passport_expiry_date") || null,
-      education_level: textValue(formData, "education_level"),
-      school_admission_status: textValue(formData, "school_admission_status"),
-      proof_of_funds_status: textValue(formData, "proof_of_funds_status"),
-      sponsor_status: textValue(formData, "sponsor_status"),
-      travel_history: textValue(formData, "travel_history"),
-      visa_refusal_history: textValue(formData, "visa_refusal_history"),
-      childcare_experience: textValue(formData, "childcare_experience"),
-      au_pair_experience: textValue(formData, "au_pair_experience"),
-      availability: textValue(formData, "availability"),
-      message: textValue(formData, "message"),
-      consent: "Yes"
-    };
-
-    const { error } = await supabaseClient
-      .from("candidates")
-      .insert([data]);
-
-    if(error){
-      status.textContent = "Error: " + error.message;
-      console.error(error);
-      return;
-    }
 <script>
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -1006,7 +1182,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
   if(formSelector){
     formSelector.addEventListener("change", function(){
-
       allCandidateForms.forEach(function(form){
         form.classList.remove("active-form");
         form.classList.add("hidden-form");
@@ -1018,14 +1193,62 @@ document.addEventListener("DOMContentLoaded", function(){
         selectedForm.classList.remove("hidden-form");
         selectedForm.classList.add("active-form");
       }
-
     });
   }
 
-});
-</script>
-    status.textContent = "✅ Submitted successfully.";
-    this.reset();
+  function textValue(formData, name){
+    return formData.get(name) || "";
+  }
+
+  allCandidateForms.forEach(function(form){
+    form.addEventListener("submit", async function(e){
+      e.preventDefault();
+
+      const status = this.querySelector(".formStatus");
+      status.textContent = "Submitting...";
+
+      const formData = new FormData(this);
+
+      const data = {
+        full_name: textValue(formData, "full_name"),
+        email: textValue(formData, "email"),
+        whatsapp: textValue(formData, "whatsapp"),
+        country: textValue(formData, "country"),
+        application_type: textValue(formData, "application_type"),
+        visa_category: textValue(formData, "visa_category"),
+        target_country: textValue(formData, "target_country"),
+        industry: textValue(formData, "industry"),
+        desired_job_role: textValue(formData, "desired_job_role"),
+        years_experience: textValue(formData, "years_experience"),
+        passport_status: textValue(formData, "passport_status"),
+        passport_expiry_date: textValue(formData, "passport_expiry_date") || null,
+        education_level: textValue(formData, "education_level"),
+        school_admission_status: textValue(formData, "school_admission_status"),
+        proof_of_funds_status: textValue(formData, "proof_of_funds_status"),
+        sponsor_status: textValue(formData, "sponsor_status"),
+        travel_history: textValue(formData, "travel_history"),
+        visa_refusal_history: textValue(formData, "visa_refusal_history"),
+        childcare_experience: textValue(formData, "childcare_experience"),
+        au_pair_experience: textValue(formData, "au_pair_experience"),
+        availability: textValue(formData, "availability"),
+        message: textValue(formData, "message"),
+        consent: "Yes"
+      };
+
+      const { error } = await supabaseClient
+        .from("candidates")
+        .insert([data]);
+
+      if(error){
+        status.textContent = "Error: " + error.message;
+        console.error(error);
+        return;
+      }
+
+      status.textContent = "✅ Submitted successfully.";
+      this.reset();
+    });
   });
+
 });
 </script>
