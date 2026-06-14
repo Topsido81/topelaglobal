@@ -614,7 +614,178 @@ footer a{
         <input name="email" type="email" placeholder="Email" required>
         <input name="whatsapp" type="tel" placeholder="WhatsApp number" required>
         <input name="country" type="text" placeholder="Current country" required>
+<label><strong>What type of support do you need?</strong></label>
+<select name="application_type" required>
+  <option value="">Select application type</option>
+  <option>Work / Recruitment</option>
+  <option>Visa Support Only</option>
+  <option>Study Admission + Visa Support</option>
+  <option>Tourist / Visitor Visa Support</option>
+  <option>Au Pair Visa Support</option>
+  <option>Family / Dependant Visa Support</option>
+  <option>General Travel Consultation</option>
+</select>
 
+<label><strong>Visa category</strong></label>
+<select name="visa_category" required>
+  <option value="">Select visa category</option>
+  <option>Work Visa</option>
+  <option>Study Visa</option>
+  <option>Tourist / Visitor Visa</option>
+  <option>Au Pair Visa</option>
+  <option>Family / Dependant Visa</option>
+  <option>Business Visa</option>
+  <option>Not sure yet</option>
+</select>
+
+<label><strong>Work visa type</strong></label>
+<select name="work_visa_type">
+  <option value="">Select work visa type if applicable</option>
+  <option>Employer-sponsored work visa</option>
+  <option>Seasonal work visa</option>
+  <option>Skilled worker visa</option>
+  <option>Care worker visa</option>
+  <option>Construction worker visa</option>
+  <option>Agriculture worker visa</option>
+  <option>Hospitality worker visa</option>
+  <option>Logistics / driver work visa</option>
+  <option>Factory / production work visa</option>
+  <option>Not applicable</option>
+</select>
+
+<label><strong>Other visa type</strong></label>
+<select name="other_visa_type">
+  <option value="">Select other visa type if applicable</option>
+  <option>Study visa</option>
+  <option>Tourist visa</option>
+  <option>Visitor visa</option>
+  <option>Au pair visa</option>
+  <option>Family reunion visa</option>
+  <option>Dependant visa</option>
+  <option>Business visa</option>
+  <option>Transit visa</option>
+  <option>Not applicable</option>
+</select>
+
+<input name="target_country" type="text" placeholder="Target country e.g. Romania, Netherlands, Germany" required>
+
+<label><strong>Date of birth</strong></label>
+<input name="date_of_birth" type="date">
+
+<label><strong>Preferred travel/work start date</strong></label>
+<input name="preferred_start_date" type="date">
+
+<label><strong>Passport expiry date</strong></label>
+<input name="passport_expiry_date" type="date">
+
+<select name="passport_status" required>
+  <option value="">Passport status</option>
+  <option>Valid passport</option>
+  <option>No passport yet</option>
+  <option>Passport expired</option>
+  <option>Passport renewal in progress</option>
+</select>
+
+<select name="highest_qualification">
+  <option value="">Highest qualification</option>
+  <option>Secondary School / WAEC</option>
+  <option>Diploma</option>
+  <option>Vocational / Technical Certificate</option>
+  <option>Bachelor Degree</option>
+  <option>Master Degree</option>
+  <option>Other</option>
+</select>
+
+<select name="school_admission_status">
+  <option value="">Study visa: admission status</option>
+  <option>I already have admission</option>
+  <option>I have applied</option>
+  <option>I need school admission guidance</option>
+  <option>Not applicable</option>
+</select>
+
+<select name="proof_of_funds_status">
+  <option value="">Proof of funds status</option>
+  <option>Available</option>
+  <option>Partially available</option>
+  <option>Not available yet</option>
+  <option>Sponsor will provide</option>
+  <option>Not applicable</option>
+</select>
+
+<select name="sponsor_status">
+  <option value="">Sponsor status</option>
+  <option>Self-sponsored</option>
+  <option>Family sponsor</option>
+  <option>Employer sponsor</option>
+  <option>Host family sponsor</option>
+  <option>No sponsor yet</option>
+</select>
+
+<select name="travel_history">
+  <option value="">Travel history</option>
+  <option>Never travelled before</option>
+  <option>Travelled within Africa</option>
+  <option>Travelled to Europe</option>
+  <option>Travelled to UK / USA / Canada</option>
+  <option>Other international travel</option>
+</select>
+
+<select name="visa_refusal_history">
+  <option value="">Any previous visa refusal?</option>
+  <option>No</option>
+  <option>Yes</option>
+</select>
+
+<textarea name="previous_refusal_reason" placeholder="If yes, explain previous visa refusal briefly"></textarea>
+
+<select name="language_level">
+  <option value="">English / communication level</option>
+  <option>Basic</option>
+  <option>Intermediate</option>
+  <option>Good</option>
+  <option>Fluent</option>
+</select>
+
+<select name="marital_status">
+  <option value="">Marital status</option>
+  <option>Single</option>
+  <option>Married</option>
+  <option>Divorced</option>
+  <option>Widowed</option>
+</select>
+
+<select name="dependants">
+  <option value="">Do you have dependants?</option>
+  <option>No</option>
+  <option>Yes, 1</option>
+  <option>Yes, 2</option>
+  <option>Yes, 3 or more</option>
+</select>
+
+<select name="medical_fitness">
+  <option value="">Are you medically fit to work/travel?</option>
+  <option>Yes</option>
+  <option>No</option>
+  <option>Not sure</option>
+</select>
+
+<select name="police_clearance">
+  <option value="">Can you provide police clearance?</option>
+  <option>Yes</option>
+  <option>No</option>
+  <option>I can apply for it</option>
+</select>
+
+<input name="childcare_experience" type="text" placeholder="Au Pair: childcare experience if applicable">
+
+<select name="au_pair_experience">
+  <option value="">Au Pair experience / interest</option>
+  <option>I have formal childcare experience</option>
+  <option>I have family babysitting experience</option>
+  <option>I am new but interested</option>
+  <option>Not applicable</option>
+</select>
         <select name="application_type" required>
           <option value="">What are you applying for?</option>
           <option>Work / Recruitment</option>
@@ -909,4 +1080,26 @@ if(candidateForm){
     this.reset();
   });
 }
+  application_type: textValue(formData, "application_type"),
+visa_category: textValue(formData, "visa_category"),
+work_visa_type: textValue(formData, "work_visa_type"),
+other_visa_type: textValue(formData, "other_visa_type"),
+target_country: textValue(formData, "target_country"),
+date_of_birth: textValue(formData, "date_of_birth"),
+preferred_start_date: textValue(formData, "preferred_start_date"),
+passport_expiry_date: textValue(formData, "passport_expiry_date"),
+highest_qualification: textValue(formData, "highest_qualification"),
+school_admission_status: textValue(formData, "school_admission_status"),
+proof_of_funds_status: textValue(formData, "proof_of_funds_status"),
+sponsor_status: textValue(formData, "sponsor_status"),
+travel_history: textValue(formData, "travel_history"),
+visa_refusal_history: textValue(formData, "visa_refusal_history"),
+previous_refusal_reason: textValue(formData, "previous_refusal_reason"),
+language_level: textValue(formData, "language_level"),
+marital_status: textValue(formData, "marital_status"),
+dependants: textValue(formData, "dependants"),
+medical_fitness: textValue(formData, "medical_fitness"),
+police_clearance: textValue(formData, "police_clearance"),
+childcare_experience: textValue(formData, "childcare_experience"),
+au_pair_experience: textValue(formData, "au_pair_experience"),
 </script>
