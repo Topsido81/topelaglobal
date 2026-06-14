@@ -790,34 +790,46 @@ footer a{
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 const SUPABASE_URL = "https://ytspisjrufbdrqkvwjky.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J";
+const SUPABASE_ANON_KEY = "PASTE_YOUR_PUBLISHABLE_KEY_HERE";
 
-const supabaseClient = supabase.createClient(https://ytspisjrufbdrqkvwjky.supabase.co, sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J);
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 function cleanFileName(fileName){
   return fileName.replace(/[^a-zA-Z0-9._-]/g, "_");
 }
 
 async function uploadFile(file, folder){
-  if(!file) return "";
+  if(!file || file.size === 0) return "";
 
-  const filePath = `${folder}/${Date.now()}_${cleanFileName(file.name)}`;
+  try{
+    const filePath = `${folder}/${Date.now()}_${cleanFileName(file.name)}`;
 
-  const { error } = await supabaseClient.storage
-    .from("candidate-documents")
-    .upload(filePath, file);
+    const { error } = await supabaseClient.storage
+      .from("candidate-documents")
+      .upload(filePath, file, {
+        cacheControl: "3600",
+        upsert: false
+      });
 
-  if(error){
-    throw error;
+    if(error){
+      console.warn("File upload failed:", error.message);
+      return "";
+    }
+
+    const { data } = supabaseClient.storage
+      .from("candidate-documents")
+      .getPublicUrl(filePath);
+
+    return data.publicUrl || "";
+
+  }catch(err){
+    console.warn("Upload error:", err.message);
+    return "";
   }
-
-  const { data } = supabaseClient.storage
-    .from("candidate-documents")
-    .getPublicUrl(filePath);
-
-  return data.publicUrl;
 }
 
 const candidateForm = document.getElementById("candidateForm");
@@ -827,61 +839,53 @@ if(candidateForm){
     e.preventDefault();
 
     const status = document.getElementById("candidateStatus");
-    status.textContent = "Submitting registration and uploading documents...";
+    status.textContent = "Submitting registration...";
 
-    try{
-      const formData = new FormData(this);
+    const formData = new FormData(this);
 
-      const cvFile = formData.get("cv_file");
-      const passportFile = formData.get("passport_file");
+    const cvFile = formData.get("cv_file");
+    const passportFile = formData.get("passport_file");
 
-      const cvUrl = await uploadFile(cvFile, "cv");
-      const passportUrl = passportFile && passportFile.size > 0
-        ? await uploadFile(passportFile, "passport")
-        : "";
+    const cvUrl = await uploadFile(cvFile, "cv");
+    const passportUrl = await uploadFile(passportFile, "passport");
 
-      const data = {
-        full_name: formData.get("full_name"),
-        email: formData.get("email"),
-        whatsapp: formData.get("whatsapp"),
-        country: formData.get("country"),
-        date_of_birth: formData.get("date_of_birth"),
-        gender: formData.get("gender"),
-        industry: formData.get("industry"),
-        desired_job_role: formData.get("desired_job_role"),
-        years_experience: formData.get("years_experience"),
-        preferred_country: formData.get("preferred_country"),
-        education_level: formData.get("education_level"),
-        english_level: formData.get("english_level"),
-        passport_status: formData.get("passport_status"),
-        visa_status: formData.get("visa_status"),
-        driving_license: formData.get("driving_license"),
-        current_employment_status: formData.get("current_employment_status"),
-        availability: formData.get("availability"),
-        criminal_record: formData.get("criminal_record"),
-        message: formData.get("message"),
-        cv_url: cvUrl,
-        passport_url: passportUrl,
-        consent: formData.get("consent")
-      };
+    const data = {
+      full_name: formData.get("full_name"),
+      email: formData.get("email"),
+      whatsapp: formData.get("whatsapp"),
+      country: formData.get("country"),
+      date_of_birth: formData.get("date_of_birth"),
+      gender: formData.get("gender"),
+      industry: formData.get("industry"),
+      desired_job_role: formData.get("desired_job_role"),
+      years_experience: formData.get("years_experience"),
+      preferred_country: formData.get("preferred_country"),
+      education_level: formData.get("education_level"),
+      english_level: formData.get("english_level"),
+      passport_status: formData.get("passport_status"),
+      visa_status: formData.get("visa_status"),
+      driving_license: formData.get("driving_license"),
+      current_employment_status: formData.get("current_employment_status"),
+      availability: formData.get("availability"),
+      criminal_record: formData.get("criminal_record"),
+      message: formData.get("message"),
+      cv_url: cvUrl,
+      passport_url: passportUrl,
+      consent: formData.get("consent") || "Yes"
+    };
 
-      const { error } = await supabaseClient
-        .from("candidates")
-        .insert([data]);
+    const { error } = await supabaseClient
+      .from("candidates")
+      .insert([data]);
 
-      if(error){
-        console.error(error);
-        status.textContent = "Error: " + error.message;
-        return;
-      }
-
-      status.textContent = "✅ Registration submitted successfully. Your documents have been uploaded.";
-      this.reset();
-
-    }catch(err){
-      console.error(err);
-      status.textContent = "Error: " + err.message;
+    if(error){
+      console.error(error);
+      status.textContent = "Error: " + error.message;
+      return;
     }
+
+    status.textContent = "✅ Registration submitted successfully.";
+    this.reset();
   });
 }
 
@@ -896,24 +900,18 @@ if(employerForm){
 
     const data = Object.fromEntries(new FormData(this).entries());
 
-    try{
-      const { error } = await supabaseClient
-        .from("employers")
-        .insert([data]);
+    const { error } = await supabaseClient
+      .from("employers")
+      .insert([data]);
 
-      if(error){
-        console.error(error);
-        status.textContent = "Error: " + error.message;
-        return;
-      }
-
-      status.textContent = "✅ Employer enquiry submitted successfully.";
-      this.reset();
-
-    }catch(err){
-      console.error(err);
-      status.textContent = "Error: " + err.message;
+    if(error){
+      console.error(error);
+      status.textContent = "Error: " + error.message;
+      return;
     }
+
+    status.textContent = "✅ Employer enquiry submitted successfully.";
+    this.reset();
   });
 }
 </script>
