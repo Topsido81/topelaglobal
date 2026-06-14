@@ -795,49 +795,19 @@ footer a{
 const SUPABASE_URL = "https://ytspisjrufbdrqkvwjky.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J";
 
-const supabaseClient = supabase.createClient(
-  https://ytspisjrufbdrqkvwjky.supabase.co,
-  sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J
-);
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-function cleanFileName(fileName){
-  return fileName.replace(/[^a-zA-Z0-9._-]/g, "_");
-}
+function formToObject(form){
+  const data = Object.fromEntries(new FormData(form).entries());
 
-async function uploadFile(file, folder){
-  if(!file || file.size === 0){
-    return "";
-  }
+  delete data.cv_file;
+  delete data.passport_file;
 
-  try{
-    const filePath = folder + "/" + Date.now() + "_" + cleanFileName(file.name);
+  data.cv_url = "";
+  data.passport_url = "";
+  data.consent = data.consent || "Yes";
 
-    const result = await supabaseClient.storage
-      .from("candidate-documents")
-      .upload(filePath, file, {
-        cacheControl: "3600",
-        upsert: true
-      });
-
-    if(result.error){
-      console.warn("File upload failed:", result.error.message);
-      return "";
-    }
-
-    const publicUrlResult = supabaseClient.storage
-      .from("candidate-documents")
-      .getPublicUrl(filePath);
-
-    if(publicUrlResult && publicUrlResult.data && publicUrlResult.data.publicUrl){
-      return publicUrlResult.data.publicUrl;
-    }
-
-    return "";
-
-  }catch(err){
-    console.warn("Upload error:", err.message);
-    return "";
-  }
+  return data;
 }
 
 const candidateForm = document.getElementById("candidateForm");
@@ -849,46 +819,15 @@ if(candidateForm){
     const status = document.getElementById("candidateStatus");
     status.textContent = "Submitting registration...";
 
-    const formData = new FormData(this);
+    const data = formToObject(this);
 
-    const cvFile = formData.get("cv_file");
-    const passportFile = formData.get("passport_file");
-
-    const cvUrl = await uploadFile(cvFile, "cv");
-    const passportUrl = await uploadFile(passportFile, "passport");
-
-    const data = {
-      full_name: formData.get("full_name") || "",
-      email: formData.get("email") || "",
-      whatsapp: formData.get("whatsapp") || "",
-      country: formData.get("country") || "",
-      date_of_birth: formData.get("date_of_birth") || "",
-      gender: formData.get("gender") || "",
-      industry: formData.get("industry") || "",
-      desired_job_role: formData.get("desired_job_role") || "",
-      years_experience: formData.get("years_experience") || "",
-      preferred_country: formData.get("preferred_country") || "",
-      education_level: formData.get("education_level") || "",
-      english_level: formData.get("english_level") || "",
-      passport_status: formData.get("passport_status") || "",
-      visa_status: formData.get("visa_status") || "",
-      driving_license: formData.get("driving_license") || "",
-      current_employment_status: formData.get("current_employment_status") || "",
-      availability: formData.get("availability") || "",
-      criminal_record: formData.get("criminal_record") || "",
-      message: formData.get("message") || "",
-      cv_url: cvUrl,
-      passport_url: passportUrl,
-      consent: formData.get("consent") || "Yes"
-    };
-
-    const result = await supabaseClient
+    const { error } = await supabaseClient
       .from("candidates")
       .insert([data]);
 
-    if(result.error){
-      console.error(result.error);
-      status.textContent = "Error: " + result.error.message;
+    if(error){
+      status.textContent = "Error: " + error.message;
+      console.error(error);
       return;
     }
 
@@ -908,13 +847,13 @@ if(employerForm){
 
     const data = Object.fromEntries(new FormData(this).entries());
 
-    const result = await supabaseClient
+    const { error } = await supabaseClient
       .from("employers")
       .insert([data]);
 
-    if(result.error){
-      console.error(result.error);
-      status.textContent = "Error: " + result.error.message;
+    if(error){
+      status.textContent = "Error: " + error.message;
+      console.error(error);
       return;
     }
 
