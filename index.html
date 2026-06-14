@@ -797,17 +797,36 @@ const SUPABASE_ANON_KEY = "sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J";
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-function formToObject(form){
-  const data = Object.fromEntries(new FormData(form).entries());
+function cleanFileName(fileName){
+  return fileName.replace(/[^a-zA-Z0-9._-]/g, "_");
+}
 
-  delete data.cv_file;
-  delete data.passport_file;
+async function uploadFile(file, folder){
+  if(!file || file.size === 0) return "";
 
-  data.cv_url = "";
-  data.passport_url = "";
-  data.consent = data.consent || "Yes";
+  const filePath = folder + "/" + Date.now() + "_" + cleanFileName(file.name);
 
-  return data;
+  const { error } = await supabaseClient.storage
+    .from("candidate-documents")
+    .upload(filePath, file, {
+      cacheControl: "3600",
+      upsert: true
+    });
+
+  if(error){
+    console.warn("Upload failed:", error.message);
+    return "";
+  }
+
+  const { data } = supabaseClient.storage
+    .from("candidate-documents")
+    .getPublicUrl(filePath);
+
+  return data.publicUrl || "";
+}
+
+function textValue(formData, name){
+  return formData.get(name) || "";
 }
 
 const candidateForm = document.getElementById("candidateForm");
@@ -819,7 +838,35 @@ if(candidateForm){
     const status = document.getElementById("candidateStatus");
     status.textContent = "Submitting registration...";
 
-    const data = formToObject(this);
+    const formData = new FormData(this);
+
+    const cvUrl = await uploadFile(formData.get("cv_file"), "cv");
+    const passportUrl = await uploadFile(formData.get("passport_file"), "passport");
+
+    const data = {
+      full_name: textValue(formData, "full_name"),
+      email: textValue(formData, "email"),
+      whatsapp: textValue(formData, "whatsapp"),
+      country: textValue(formData, "country"),
+      date_of_birth: textValue(formData, "date_of_birth"),
+      gender: textValue(formData, "gender"),
+      industry: textValue(formData, "industry"),
+      desired_job_role: textValue(formData, "desired_job_role"),
+      years_experience: textValue(formData, "years_experience"),
+      preferred_country: textValue(formData, "preferred_country"),
+      education_level: textValue(formData, "education_level"),
+      english_level: textValue(formData, "english_level"),
+      passport_status: textValue(formData, "passport_status"),
+      visa_status: textValue(formData, "visa_status"),
+      driving_license: textValue(formData, "driving_license"),
+      current_employment_status: textValue(formData, "current_employment_status"),
+      availability: textValue(formData, "availability"),
+      criminal_record: textValue(formData, "criminal_record"),
+      message: textValue(formData, "message"),
+      cv_url: cvUrl,
+      passport_url: passportUrl,
+      consent: textValue(formData, "consent") || "Yes"
+    };
 
     const { error } = await supabaseClient
       .from("candidates")
