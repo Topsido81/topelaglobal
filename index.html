@@ -708,57 +708,20 @@ footer a{
   </div>
 </footer>
 
-<script>
-function googleTranslateElementInit(){
-  new google.translate.TranslateElement({
-    pageLanguage:"en",
-    includedLanguages:"en,nl,fr,de,es,it,pt,pl,ro,sv,da,fi,no,el,cs,hu,uk",
-    autoDisplay:false
-  },"google_translate_element");
-}
-
-document.getElementById("languageSelect").addEventListener("change",function(){
-  const lang=this.value;
-  if(!lang) return;
-
-  const interval=setInterval(function(){
-    const googleSelect=document.querySelector(".goog-te-combo");
-    if(googleSelect){
-      googleSelect.value=lang;
-      googleSelect.dispatchEvent(new Event("change"));
-      clearInterval(interval);
-    }
-  },300);
-});
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 const SUPABASE_URL = "https://ytspisjrufbdrqkvwjky.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J";
+const SUPABASE_ANON_KEY = "YOUR_PUBLISHABLE_KEY_HERE";
 
-const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
 
 function formToObject(form){
   return Object.fromEntries(new FormData(form).entries());
 }
-
-document.getElementById("employerForm").addEventListener("submit", async function(e){
-  e.preventDefault();
-
-  const status = document.getElementById("employerStatus");
-  status.textContent = "Sending...";
-
-  const data = formToObject(this);
-
-  const { error } = await supabaseClient.from("employers").insert([data]);
-
-  if(error){
-    status.textContent = "Error: " + error.message;
-  }else{
-    status.textContent = "Thank you. Your employer enquiry has been received.";
-    this.reset();
-  }
-});
 
 document.getElementById("candidateForm").addEventListener("submit", async function(e){
   e.preventDefault();
@@ -768,12 +731,15 @@ document.getElementById("candidateForm").addEventListener("submit", async functi
 
   const data = formToObject(this);
 
-  const { error } = await supabaseClient.from("candidates").insert([data]);
+  const { error } = await supabaseClient
+    .from("candidates")
+    .insert([data]);
 
   if(error){
     status.textContent = "Error: " + error.message;
+    console.error(error);
   }else{
-    status.textContent = "Thank you. Your registration has been received.";
+    status.textContent = "Registration received successfully.";
     this.reset();
   }
 });
