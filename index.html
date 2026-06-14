@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TOPELA TRAVELS LIMITED | European Travel, Recruitment & Mobility Solutions</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TOPELA GLOBAL | Ethical International Recruitment</title>
+
 <style>
 *{box-sizing:border-box;scroll-behavior:smooth}
+
+:root{
+  --blue:#0b3c78;
+  --dark:#06172d;
+  --gold:#d4af37;
+  --cream:#f7f4ed;
+  --text:#1f2933;
+  --white:#ffffff;
+}
 
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
-  background:#f7f4ed;
-  color:#1f2933;
+  background:var(--cream);
+  color:var(--text);
   line-height:1.6;
 }
 
@@ -27,18 +37,18 @@ body{
   top:0;
   z-index:9999;
   box-shadow:0 6px 22px rgba(0,0,0,.12);
-  border-bottom:4px solid #d4af37;
+  border-bottom:4px solid var(--gold);
 }
 
 .logo-area{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:16px;
 }
 
 .logo-link{
-  width:160px;
-  height:78px;
+  width:150px;
+  height:76px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -49,18 +59,12 @@ body{
   width:100%;
   height:100%;
   object-fit:contain;
-  transition:.35s ease;
-}
-
-.logo-link:hover .site-logo{
-  transform:scale(.82);
-  filter:drop-shadow(0 0 8px rgba(212,175,55,.8));
 }
 
 .language-select{
-  border:2px solid #d4af37;
+  border:2px solid var(--gold);
   background:#fff;
-  color:#0b3c78;
+  color:var(--blue);
   font-weight:800;
   padding:9px 12px;
   border-radius:8px;
@@ -69,132 +73,130 @@ body{
 }
 
 #google_translate_element{
-  display:none;
+  position:absolute;
+  left:-9999px;
 }
 
 nav{
   display:flex;
   align-items:center;
-  gap:24px;
+  gap:22px;
 }
 
 nav a{
   text-decoration:none;
   font-weight:900;
-  color:#0b3c78;
+  color:var(--blue);
   font-size:15px;
-  position:relative;
-}
-
-nav a span{
-  color:#d4af37;
-}
-
-nav a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-8px;
-  width:0;
-  height:3px;
-  background:linear-gradient(90deg,#0b3c78,#d4af37);
-  transition:.3s;
 }
 
 nav a:hover{
-  color:#d4af37;
-}
-
-nav a:hover::after{
-  width:100%;
+  color:var(--gold);
 }
 
 .hero{
-  min-height:calc(100vh - 124px);
-  display:flex;
+  min-height:92vh;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
   align-items:center;
-  justify-content:center;
-  text-align:center;
+  gap:40px;
+  padding:90px 10%;
   color:#fff;
-  padding:120px 20px;
   background:
-    linear-gradient(rgba(4,21,43,.82),rgba(4,21,43,.82)),
+    linear-gradient(rgba(4,21,43,.88),rgba(4,21,43,.88)),
     url("assets/img/workforce-banner.jpg");
   background-size:cover;
   background-position:center;
-  position:relative;
-  overflow:hidden;
 }
 
-.hero::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 20% 20%,rgba(212,175,55,.38),transparent 32%),
-    radial-gradient(circle at 80% 65%,rgba(11,60,120,.55),transparent 36%);
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:950px;
+.badge{
+  display:inline-block;
+  background:rgba(212,175,55,.18);
+  color:var(--gold);
+  border:1px solid var(--gold);
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:900;
+  margin-bottom:18px;
 }
 
 .hero h1{
-  font-size:clamp(42px,7vw,78px);
-  margin:0 0 18px;
-  letter-spacing:3px;
-  text-shadow:0 8px 24px rgba(0,0,0,.5);
+  font-size:clamp(38px,6vw,72px);
+  line-height:1.05;
+  margin:0 0 20px;
 }
 
 .hero h1 span{
-  color:#d4af37;
+  color:var(--gold);
 }
 
 .hero p{
-  font-size:clamp(17px,2vw,23px);
-  max-width:850px;
-  margin:0 auto 32px;
+  font-size:clamp(17px,2vw,22px);
+  max-width:720px;
+}
+
+.hero-photo{
+  width:100%;
+  max-width:430px;
+  border-radius:26px;
+  border:6px solid var(--gold);
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+  justify-self:center;
 }
 
 .btn{
   display:inline-block;
-  padding:15px 30px;
-  margin:8px;
-  background:#d4af37;
+  padding:15px 28px;
+  margin:10px 8px 0 0;
+  background:var(--gold);
   color:#111;
   text-decoration:none;
   font-weight:900;
-  border-radius:8px;
-  transition:.3s;
+  border-radius:9px;
+  border:none;
+  cursor:pointer;
 }
 
 .btn-dark{
-  background:#0b3c78;
+  background:var(--blue);
   color:#fff;
-  border:1px solid #d4af37;
+  border:1px solid var(--gold);
 }
 
-.btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 10px 24px rgba(0,0,0,.28);
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:30px;
+}
+
+.stat{
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.25);
+  padding:18px;
+  border-radius:14px;
+}
+
+.stat strong{
+  display:block;
+  color:var(--gold);
+  font-size:28px;
 }
 
 .marquee-wrapper{
   width:100%;
-  background:#d4af37;
+  background:var(--gold);
   height:42px;
   display:flex;
   align-items:center;
   overflow:hidden;
-  border-bottom:3px solid #0b3c78;
+  border-bottom:3px solid var(--blue);
 }
 
 .marquee-content{
   white-space:nowrap;
   font-weight:900;
-  color:#0b3c78;
+  color:var(--blue);
   animation:scrollNews 25s linear infinite;
   padding-left:100%;
 }
@@ -208,98 +210,144 @@ section{
   padding:80px 10%;
 }
 
-.section-title{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.section-title h2,section h2{
-  color:#0b3c78;
-  font-size:clamp(28px,4vw,40px);
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:28px;
-}
-
-.card{
-  background:#fff;
-  padding:32px;
-  border-radius:16px;
-  text-align:center;
-  border-top:5px solid #d4af37;
-  box-shadow:0 8px 26px rgba(0,0,0,.08);
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-}
-
-.card h3{
-  color:#0b3c78;
-}
-
 .light{
   background:#fff;
 }
 
-.step{
-  color:#d4af37;
-  font-weight:900;
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
 }
 
-.about-founder{
-  max-width:900px;
-  margin:auto;
-  font-size:18px;
+.section-title h2{
+  color:var(--blue);
+  font-size:clamp(28px,4vw,42px);
+  margin-bottom:10px;
 }
 
-.leader-photo{
-  width:185px;
-  height:185px;
-  border-radius:50%;
-  object-fit:cover;
-  object-position:center top;
-  margin:0 auto 20px;
-  border:5px solid #d4af37;
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:26px;
 }
 
-.contact-card a{
-  color:#0b3c78;
-  font-weight:bold;
-  text-decoration:none;
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:16px;
+  border-top:5px solid var(--gold);
+  box-shadow:0 8px 26px rgba(0,0,0,.08);
+}
+
+.light .card{
+  background:var(--cream);
+}
+
+.card h3{
+  color:var(--blue);
+  margin-top:0;
+}
+
+.icon{
+  font-size:34px;
+}
+
+.two-col{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:start;
+}
+
+.panel{
+  background:#fff;
+  padding:34px;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  border-left:6px solid var(--gold);
+}
+
+.light .panel{
+  background:var(--cream);
+}
+
+ul{
+  padding-left:22px;
+}
+
+li{
+  margin-bottom:8px;
 }
 
 form{
-  max-width:800px;
-  margin:40px auto 0;
   display:grid;
-  gap:15px;
+  gap:14px;
+  margin-top:22px;
 }
 
-input,textarea{
+input,select,textarea{
   width:100%;
   padding:15px;
   font-size:16px;
-  border:1px solid #ccc;
-  border-radius:8px;
+  border:1px solid #cfd6df;
+  border-radius:9px;
+  font-family:inherit;
 }
 
 textarea{
-  min-height:150px;
+  min-height:130px;
+}
+
+.notice{
+  background:#fff7d6;
+  border-left:5px solid var(--gold);
+  padding:18px;
+  border-radius:10px;
+  font-weight:700;
+}
+
+.founder{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.founder img{
+  width:100%;
+  border-radius:24px;
+  border:6px solid var(--gold);
+}
+
+.tag{
+  display:inline-block;
+  background:var(--blue);
+  color:#fff;
+  padding:8px 12px;
+  border-radius:999px;
+  margin:5px;
+  font-size:14px;
+  font-weight:800;
+}
+
+.cta{
+  background:linear-gradient(135deg,var(--dark),var(--blue));
+  color:#fff;
+  text-align:center;
+}
+
+.cta h2{
+  color:var(--gold);
 }
 
 footer{
-  background:#06172d;
+  background:var(--dark);
   color:#fff;
   padding:55px 10%;
 }
 
 footer h3{
-  color:#d4af37;
+  color:var(--gold);
 }
 
 footer a{
@@ -314,15 +362,10 @@ footer a{
   padding-top:20px;
 }
 
-@media(max-width:900px){
+@media(max-width:950px){
   .navbar{
     flex-direction:column;
     padding:12px;
-  }
-
-  .logo-area{
-    width:100%;
-    justify-content:space-between;
   }
 
   nav{
@@ -330,7 +373,22 @@ footer a{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     text-align:center;
-    gap:16px;
+    gap:14px;
+    margin-top:10px;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+    padding:70px 6%;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .two-col,.founder{
+    grid-template-columns:1fr;
   }
 }
 
@@ -339,17 +397,8 @@ footer a{
     flex-direction:column;
   }
 
-  .logo-link{
-    width:140px;
-    height:70px;
-  }
-
   nav{
     grid-template-columns:repeat(2,1fr);
-  }
-
-  .hero{
-    padding:90px 18px;
   }
 
   section{
@@ -358,7 +407,7 @@ footer a{
 
   .btn{
     width:100%;
-    max-width:290px;
+    text-align:center;
   }
 }
 </style>
@@ -369,7 +418,7 @@ footer a{
 <header class="navbar">
   <div class="logo-area">
     <a href="#home" class="logo-link">
-      <img src="assets/topela-logo2.jpg" alt="Topela Global Logo" class="site-logo">
+      <img src="assets/topela-logo2.jpg" alt="TOPELA GLOBAL Logo" class="site-logo">
     </a>
 
     <select class="language-select" id="languageSelect">
@@ -396,11 +445,11 @@ footer a{
 
   <nav>
     <a href="#home">Home</a>
-    <a href="#services"><span>Services</span></a>
+    <a href="#employers">Employers</a>
+    <a href="#process">Process</a>
     <a href="#industries">Industries</a>
-    <a href="#process"><span>Process</span></a>
-    <a href="#about">About</a>
-    <a href="#leadership"><span>Leadership</span></a>
+    <a href="#candidates">Candidates</a>
+    <a href="#founder">Founder</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -410,353 +459,223 @@ footer a{
 <main>
 
 <section id="home" class="hero">
-  <div class="hero-content">
-   <h1>TOPELA <span>GLOBAL</span></h1>
+  <div>
+    <div class="badge">Ethical international recruitment from Africa to global employers</div>
+    <h1>TOPELA <span>GLOBAL</span></h1>
+    <p><strong>Workforce Mobility & Recruitment</strong></p>
+    <p>Connecting qualified African talent with legitimate employers abroad through transparent, legal and compliance-first recruitment pathways.</p>
 
-<p>
-Connecting African Professionals, Students and Skilled Workers with Trusted European Opportunities.</p>
+    <a href="#employer-form" class="btn">I Need Workers</a>
+    <a href="#candidate-form" class="btn btn-dark">Register as Candidate</a>
 
-<p>
-Building reliable partnerships between employers, recruitment agencies and skilled candidates across Europe and Africa.
-</p>
-</p><a href="#services" class="btn">Our Services</a>
-    <a href="#contact" class="btn btn-dark">Contact Us</a>
+    <div class="stats">
+      <div class="stat"><strong>500+</strong>Registered candidate pipeline</div>
+      <div class="stat"><strong>Ethical</strong>Recruitment approach</div>
+      <div class="stat"><strong>Europe</strong>Employer partnership focus</div>
+    </div>
   </div>
+
+  <img src="assets/img/michael-hero.png" alt="Michael Temitope Akinsola Founder of TOPELA GLOBAL" class="hero-photo">
 </section>
+
 <div class="marquee-wrapper">
   <div class="marquee-content">
-    🇪🇺 European Recruitment • Visa Support • Travel Preparation • Employer Partnerships • Netherlands • Germany • France • Spain • Poland • Romania • Portugal • Italy
+    Workforce Recruitment • Candidate Screening • Employer Partnerships • Healthcare • Hospitality • Construction • Agriculture • Logistics • Manufacturing • Legal Pathways
   </div>
 </div>
 
-<section id="services">
+<section id="employers" class="light">
   <div class="section-title">
-    <h2>Our Services</h2>
-    <p>Professional recruitment support for employers, agencies and international workforce partners.</p>
+    <h2>For Employers and Recruitment Partners</h2>
+    <p>We support organizations that need reliable international workers and want to recruit through proper legal channels.</p>
   </div>
 
   <div class="grid">
-    <div class="card"><h3>Workforce Recruitment</h3><p>Finding qualified skilled and non-skilled workers for international employers.</p></div>
-    <div class="card"><h3>Candidate Screening</h3><p>Reviewing experience, skills, availability and job readiness.</p></div>
-    <div class="card"><h3>Document Verification</h3><p>Checking CVs, certificates, references and supporting records.</p></div>
-    <div class="card"><h3>Visa & Mobility Support</h3><p>Travel preparation assistance through TOPELA TRAVELS.</p></div>
-    <div class="card"><h3>Employer Partnership</h3><p>Long-term workforce solutions built around employer needs.</p></div>
-    <div class="card"><h3>Candidate Video Profiles</h3><p>Video interviews and introductions to help employers assess candidates faster.</p></div>
+    <div class="card">
+      <div class="icon">👥</div>
+      <h3>Pre-screened Candidates</h3>
+      <p>We identify candidates with relevant experience, motivation, documentation readiness and communication ability before introducing them to partners.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🛡️</div>
+      <h3>Compliance-first Process</h3>
+      <p>We do not promote shortcuts or illegal migration. Our recruitment approach is built around lawful employment and immigration requirements.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🤝</div>
+      <h3>Long-term Partnerships</h3>
+      <p>We aim to become a trusted workforce partner for employers, recruiters and staffing agencies with ongoing hiring needs.</p>
+    </div>
   </div>
 </section>
 
-<section id="industries" class="light">
-  <div class="section-title">
-    <h2>Industries We Serve</h2>
-    <p>Supplying screened and motivated candidates across essential employment sectors.</p>
-  </div>
-
-  <div class="grid">
-    <div class="card"><h3>Construction</h3><p>Skilled trades, site labour and project support workers.</p></div>
-    <div class="card"><h3>Warehousing</h3><p>Pickers, packers, loaders and logistics support staff.</p></div>
-    <div class="card"><h3>Agriculture</h3><p>Farm, greenhouse, livestock and seasonal workers.</p></div>
-    <div class="card"><h3>Hospitality</h3><p>Hotel, kitchen, restaurant and housekeeping support.</p></div>
-    <div class="card"><h3>Healthcare Support</h3><p>Caregivers, healthcare assistants and care support staff.</p></div>
-    <div class="card"><h3>Manufacturing</h3><p>Factory, production, assembly and packaging workers.</p></div>
-  </div>
-</section>
-<section id="aupair" class="light">
-
-<div class="section-title">
-<h2>Au Pair Program Preparation</h2>
-
-<p>
-Preparing responsible, caring and culturally aware young adults for
-international Au Pair opportunities and cultural exchange experiences.
-</p>
-
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>Carefully Screened Candidates</h3>
-
-<p>
-Each applicant undergoes an initial screening process including
-identity verification, background review, childcare motivation
-assessment and communication evaluation.
-</p>
-
-</div>
-
-<div class="card">
-<h3>Childcare & Family Readiness</h3>
-
-<p>
-Candidates are guided on childcare responsibilities, cultural
-adaptation, family integration, household expectations and professional
-conduct before being introduced to host families.
-</p>
-
-</div>
-
-<div class="card">
-<h3>Communication Skills</h3>
-
-<p>
-We encourage candidates to develop strong communication skills,
-language confidence and interpersonal abilities that support successful
-family placements.
-</p>
-
-</div>
-
-<div class="card">
-<h3>Cultural Exchange Focus</h3>
-
-<p>
-Our approach promotes cultural exchange, personal growth and mutual
-respect between host families and Au Pair participants.
-</p>
-
-</div>
-
-</div>
-
-<div class="about-box" style="margin-top:40px;">
-
-<h3 style="color:#082f63;">
-Our Commitment To Host Families
-</h3>
-
-<p>
-TOPELA GLOBAL understands the importance of trust when welcoming an Au
-Pair into your home.
-</p>
-
-<p>
-For this reason, we encourage all applicants to demonstrate maturity,
-responsibility, honesty, adaptability and a genuine interest in
-supporting family life and childcare activities.
-</p>
-
-<p>
-Candidates are expected to respect the laws, culture, values and
-household rules of the host country while maintaining a positive and
-professional attitude throughout their stay.
-</p>
-
-<p>
-Our goal is to help connect host families with motivated individuals
-who are eager to learn, contribute positively and participate in a
-meaningful cultural exchange experience.
-</p>
-
-</div>
-
-</section>
 <section id="process">
   <div class="section-title">
-    <h2>Our Recruitment Process</h2>
-    <p>A clear process designed to support employers and prepare reliable candidates.</p>
+    <h2>How We Support Recruitment Partners</h2>
+    <p>A simple, transparent process designed for serious employers and agencies.</p>
   </div>
 
   <div class="grid">
-    <div class="card"><p class="step">Step 1</p><h3>Candidate Screening</h3><p>We review skills, experience, availability and employment readiness.</p></div>
-    <div class="card"><p class="step">Step 2</p><h3>Document Verification</h3><p>We check CVs, certificates, references and supporting records.</p></div>
-    <div class="card"><p class="step">Step 3</p><h3>Video Interview</h3><p>We arrange introductions and candidate profile videos where needed.</p></div>
-    <div class="card"><p class="step">Step 4</p><h3>Employer Selection</h3><p>Employers review suitable candidates and select the best fit.</p></div>
-    <div class="card"><p class="step">Step 5</p><h3>Travel Preparation</h3><p>We support document preparation and travel coordination guidance.</p></div>
-    <div class="card"><p class="step">Step 6</p><h3>Deployment</h3><p>We support communication through the final recruitment stage.</p></div>
+    <div class="card">
+      <h3>1. Understand Workforce Needs</h3>
+      <p>We review the role, country, sector, legal route, experience level, language needs and employer expectations.</p>
+    </div>
+
+    <div class="card">
+      <h3>2. Match Suitable Candidates</h3>
+      <p>We filter our candidate pipeline and identify people who appear suitable for the opportunity and documentation requirements.</p>
+    </div>
+
+    <div class="card">
+      <h3>3. Support Communication</h3>
+      <p>We help coordinate candidate information, interview readiness and transparent follow-up with recruitment partners.</p>
+    </div>
+
+    <div class="card">
+      <h3>4. Build Compliant Partnerships</h3>
+      <p>We work only through proper legal channels and expect employers and partners to follow employment and immigration rules.</p>
+    </div>
   </div>
 </section>
-<section id="company">
-<div class="section-title">
-<h2>Company Information</h2>
-</div>
 
-<div class="about-box">
-<p><strong>Company Name:</strong> TOPELA TRAVELS LIMITED</p>
+<section id="employer-form" class="light">
+  <div class="two-col">
+    <div>
+      <h2>Employer Enquiry</h2>
+      <p>Tell us what type of workers you need. We will respond to discuss fit, process and partnership possibilities.</p>
+      <div class="notice">
+        We are looking for genuine employer, recruiter, staffing agency and workforce partnerships — not shortcuts or illegal migration opportunities.
+      </div>
+    </div>
 
-<p><strong>Managing Director:</strong> Michael Temitope Akinsola</p>
+    <div class="panel">
+      <form id="employerForm">
+        <input name="company_name" type="text" placeholder="Company name" required>
+        <input name="contact_person" type="text" placeholder="Contact person" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="country" type="text" placeholder="Country" required>
 
-<p><strong>Head Office:</strong><br>
-Shop 18 RAO Plaza<br>
-Yidi Elebu, Off Akala Express Road<br>
-Ibadan, Oyo State, Nigeria
-</p>
+        <select name="industry" required>
+          <option value="">Select industry</option>
+          <option>Healthcare / Care</option>
+          <option>Hospitality</option>
+          <option>Construction</option>
+          <option>Agriculture</option>
+          <option>Logistics</option>
+          <option>Manufacturing</option>
+          <option>Domestic / Facility Support</option>
+          <option>Other</option>
+        </select>
 
-<p><strong>Website:</strong> www.topelaglobal.com</p>
-
-<p><strong>Email:</strong> schengenwithtopela@gmail.com</p>
-
-<p><strong>WhatsApp:</strong> +353 87 180 2797</p>
-</div>
+        <textarea name="message" placeholder="Workers needed / message" required></textarea>
+        <button class="btn" type="submit">Send Employer Enquiry</button>
+        <p id="employerStatus"></p>
+      </form>
+    </div>
+  </div>
 </section>
-<section id="about" class="light">
+
+<section id="industries">
   <div class="section-title">
-    <h2>About TOPELA GLOBAL</h2>
-    <p>International recruitment, workforce mobility and travel support.</p>
-  </div>
-
-  <div class="about-founder">
-    <p>TOPELA GLOBAL is connected with TOPELA TRAVELS, a registered company operated by Michael Akinsola. The company focuses on travel guidance, documentation support, candidate coordination and verified international opportunities.</p>
-
-    <p>For anyone who would like to read further about me, my name is Michael Akinsola. I am originally from Nigeria and currently based in the Netherlands, where I live, work and build professional international partnerships.</p>
-
-    <p>Before moving into business and international networking, I served in the Nigerian Army for 12 years. That experience helped shape my discipline, leadership, organization, communication skills and ability to work with people from different backgrounds.</p>
-
-    <p>Having lived in Europe for over two years, with exposure to the Netherlands, Spain, Germany, France and Ireland, I understand both European employer expectations and the challenges many qualified Nigerians face when looking for genuine legal work opportunities abroad.</p>
-
-    <p>My goal is to build a transparent, professional and long-term recruitment structure that benefits employers, recruitment agencies and reliable workers.</p>
-  </div>
-</section>
-
-<section id="leadership">
-  <section id="leadership">
-
-<div class="section-title">
-<h2>Leadership</h2>
-<p>Committed to professionalism, integrity and international workforce development.</p>
-</div>
-
-<div class="about-founder" style="text-align:center;">
-
-<img src="michael-akinsola.jpg"
-alt="Michael Akinsola"
-class="leader-photo">
-
-<h3>Michael Temitope Akinsola</h3>
-
-<p><strong>Founder & CEO, TOPELA GLOBAL</strong></p>
-
-<p>
-Michael Akinsola is the founder of TOPELA GLOBAL and TOPELA TRAVELS.
-Originally from Nigeria and currently based in Europe, he focuses on
-international recruitment, workforce mobility, travel guidance and
-strategic employer partnerships.
-</p>
-
-<p>
-With over a decade of leadership experience and international exposure,
-his mission is to create transparent pathways connecting African talent
-with genuine opportunities abroad.
-</p>
-
-</div>
-
-</section>
-<section id="employers" class="light">
-
-<div class="section-title">
-<h2>For Employers & Recruitment Partners</h2>
-<p>Reliable workforce sourcing from Africa.</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>Pre-Screened Candidates</h3>
-<p>All candidates undergo document review and initial assessment.</p>
-</div>
-
-<div class="card">
-<h3>Recruitment Support</h3>
-<p>We assist employers in sourcing suitable workers for their vacancies.</p>
-</div>
-
-<div class="card">
-<h3>Candidate Database</h3>
-<p>Growing database of skilled, semi-skilled and entry-level candidates.</p>
-</div>
-
-</div>
-
-</section>
-<section class="light">
-
-<div class="section-title">
-<h2>Why Choose TOPELA?</h2>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>Transparency</h3>
-<p>No false promises and no guaranteed visas.</p>
-</div>
-
-<div class="card">
-<h3>Professional Screening</h3>
-<p>Applicants are evaluated before referral.</p>
-</div>
-
-<div class="card">
-<h3>International Network</h3>
-<p>Building partnerships with employers, universities and agencies.</p>
-</div>
-
-<div class="card">
-<h3>Compliance First</h3>
-<p>Respecting immigration laws and employer requirements.</p>
-</div>
-
-</div>
-
-</section>
-</section>
-
-<section id="contact" class="light">
-  <div class="section-title">
-    <h2>Contact TOPELA GLOBAL</h2>
-    <p>Let us discuss your workforce and recruitment needs.</p>
+    <h2>Industries We Serve</h2>
+    <p>Our candidate pipeline supports sectors where employers often need dependable and motivated workers.</p>
   </div>
 
   <div class="grid">
-    <div class="card contact-card">
-      <h3>Phone / WhatsApp</h3>
-      <p><a href="https://wa.me/353871802797">+353 87 180 2797</a></p>
+    <div class="card"><h3>Healthcare & Care</h3><p>Care assistants, support workers and related roles.</p></div>
+    <div class="card"><h3>Hospitality</h3><p>Hotels, restaurants, cleaning, kitchen and service roles.</p></div>
+    <div class="card"><h3>Construction</h3><p>General labour, skilled trades and site support.</p></div>
+    <div class="card"><h3>Agriculture</h3><p>Farm workers, greenhouse support and seasonal roles.</p></div>
+    <div class="card"><h3>Logistics</h3><p>Warehouse, packing, drivers and distribution support.</p></div>
+    <div class="card"><h3>Manufacturing</h3><p>Production, assembly and factory support workers.</p></div>
+    <div class="card"><h3>Domestic & Facility</h3><p>Cleaning, maintenance and facility support.</p></div>
+    <div class="card"><h3>Other Sectors</h3><p>We review workforce needs case by case.</p></div>
+  </div>
+</section>
+
+<section id="candidates" class="light">
+  <div class="two-col">
+    <div>
+      <h2>Candidate Registration</h2>
+      <p>Are you a qualified candidate looking for legitimate work opportunities abroad? Register your details and we will contact suitable candidates when verified opportunities become available.</p>
+
+      <ul>
+        <li>No fake job promises</li>
+        <li>No illegal migration routes</li>
+        <li>No guaranteed visa claims</li>
+        <li>Only proper recruitment channels</li>
+      </ul>
     </div>
 
-    <div class="card contact-card">
-    
-<h3>Email</h3>
+    <div class="panel" id="candidate-form">
+      <h3>Register Your Interest</h3>
 
-<p>
-<a href="mailto:info@topelaglobal.com">
-info@topelaglobal.com
-</a>
-</p>
+      <form id="candidateForm">
+        <input name="full_name" type="text" placeholder="Full name" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="whatsapp" type="tel" placeholder="WhatsApp number" required>
+        <input name="country" type="text" placeholder="Country" required>
 
-<p>
-<a href="mailto:schengenwithtopela@gmail.com">
-schengenwithtopela@gmail.com
-</a>
-</p>
+        <select name="industry" required>
+          <option value="">Select industry</option>
+          <option>Healthcare / Care</option>
+          <option>Hospitality</option>
+          <option>Construction</option>
+          <option>Agriculture</option>
+          <option>Logistics</option>
+          <option>Manufacturing</option>
+          <option>Domestic / Facility Support</option>
+          <option>Other</option>
+        </select>
 
-<p>
-<a href="mailto:topsido81.tma57@gmail.com">
-topsido81.tma57@gmail.com
-</a>
-</p>
+        <input name="years_experience" type="text" placeholder="Years of experience" required>
 
-</div>
+        <select name="passport_status" required>
+          <option value="">Select passport status</option>
+          <option>Valid passport</option>
+          <option>No passport yet</option>
+          <option>Passport expired</option>
+        </select>
 
+        <textarea name="message" placeholder="Tell us about your experience" required></textarea>
+        <button class="btn" type="submit">Submit Registration</button>
+        <p id="candidateStatus"></p>
+      </form>
 
-
-    <div class="card contact-card">
-      <h3>Website</h3>
-      <p><a href="https://www.topelaglobal.com">www.topelaglobal.com</a></p>
+      <p><small>By submitting, you agree to be contacted by TOPELA GLOBAL about legitimate recruitment opportunities.</small></p>
     </div>
   </div>
+</section>
 
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <input type="tel" placeholder="Your Phone" required>
-    <textarea placeholder="Your Message" required></textarea>
+<section id="founder">
+  <div class="founder">
+    <img src="assets/img/michael-founder.png"Michael Temitope Akinsola">
 
-    <div style="text-align:center;">
-      <a href="mailto:info@topelaglobal.com" class="btn">Send Message</a>
-      <a href="https://wa.me/353871802797" class="btn btn-dark">WhatsApp Us</a>
+    <div>
+      <h2>Meet the Founder</h2>
+      <p><strong>Michael Temitope Akinsola</strong> is the Founder & CEO of TOPELA GLOBAL. Based between Europe and Africa, Michael is building transparent workforce mobility pathways that connect qualified African candidates with legitimate employers abroad.</p>
+
+      <p>TOPELA GLOBAL exists to support employers with reliable talent while protecting candidates through ethical recruitment, clear communication and lawful processes.</p>
+
+      <div>
+        <span class="tag">Founder-led</span>
+        <span class="tag">Africa-Europe Bridge</span>
+        <span class="tag">Ethical Recruitment</span>
+        <span class="tag">Employer Focused</span>
+      </div>
     </div>
-  </form>
+  </div>
+</section>
+
+<section id="contact" class="cta">
+  <h2>Ethical Recruitment. Real Partnerships. Legal Pathways.</h2>
+  <p>We are not looking for shortcuts or illegal migration opportunities. We are building genuine partnerships with employers who need reliable workers and wish to recruit through proper legal channels.</p>
+
+  <a href="#employer-form" class="btn">Partner With Us</a>
+  <a href="mailto:info@topelaglobal.com" class="btn btn-dark">Email TOPELA GLOBAL</a>
+  <a href="https://wa.me/353871802797" class="btn">WhatsApp</a>
 </section>
 
 </main>
@@ -765,110 +684,27 @@ topsido81.tma57@gmail.com
   <div class="grid">
     <div>
       <h3>TOPELA GLOBAL</h3>
-      <p>Connecting African talent with global employers through reliable recruitment and workforce solutions.</p>
+      <p>Workforce mobility and recruitment company connecting qualified African candidates with legitimate employers abroad.</p>
     </div>
 
     <div>
-      <h3>Quick Links</h3>
-      <p><a href="#home">Home</a></p>
-      <p><a href="#services">Services</a></p>
-      <p><a href="#industries">Industries</a></p>
-      <p><a href="#about">About</a></p>
-      <a href="#client-registration">Apply</a>
-      <section id="client-registration">
-
-<div class="section-title">
-<h2>Client Registration Form</h2>
-
-<p>
-Complete this form to register for recruitment,
-study abroad, travel or workforce opportunities.
-</p>
-</div>
-
-<form action="YOUR_FORMSPREE_LINK" method="POST">
-
-<input type="text"
-name="Full Name"
-placeholder="Full Name"
-required>
-
-<input type="email"
-name="Email"
-placeholder="Email Address"
-required>
-
-<input type="tel"
-name="Phone"
-placeholder="Phone Number / WhatsApp"
-required>
-
-<input type="text"
-name="Country"
-placeholder="Country of Residence"
-required>
-
-<select name="Service">
-
-<option>Select Service</option>
-
-<option>Work Opportunity</option>
-
-<option>Caregiver Opportunity</option>
-
-<option>Study Abroad</option>
-
-<option>Tourist Visa</option>
-
-<option>Student Visa</option>
-
-<option>Employer Partnership</option>
-
-</select>
-
-<input type="text"
-name="Profession"
-placeholder="Current Profession">
-
-<input type="text"
-name="Experience"
-placeholder="Years of Experience">
-
-<textarea
-name="Message"
-placeholder="Tell us about your goals">
-</textarea>
-
-<button type="submit" class="btn">
-Submit Registration
-</button>
-
-</form>
-
-</section>
+      <h3>Company</h3>
+      <p><a href="#employers">Employers</a></p>
+      <p><a href="#candidates">Candidates</a></p>
+      <p><a href="#founder">Founder</a></p>
       <p><a href="#contact">Contact</a></p>
     </div>
 
     <div>
-      <h3>Contact Details</h3>
-      <p>+353 87 180 2797</p>
-      <p>info@topelaglobal.com <p>info@topelaglobal.com</p>
-      </p>
-      <p>www.topelaglobal.com
-      </p>
-      
+      <h3>Contact</h3>
+      <p>Nigeria / Europe</p>
+      <p>Email: <a href="mailto:info@topelaglobal.com">info@topelaglobal.com</a></p>
+      <p>WhatsApp: <a href="https://wa.me/353871802797">+353 87 180 2797</a></p>
     </div>
-    <p>
-TOPELA TRAVELS LIMITED does not sell visas, guarantee visas,
-guarantee employment, admission, host-family placement or
-immigration approval. All applications remain subject to the
-requirements and decisions of the relevant employer,
-institution, embassy or immigration authority.
-</p>
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Topela Global. All Rights Reserved.</p>
+    <p>© 2026 TOPELA GLOBAL. Ethical international recruitment and workforce mobility.</p>
   </div>
 </footer>
 
@@ -883,6 +719,8 @@ function googleTranslateElementInit(){
 
 document.getElementById("languageSelect").addEventListener("change",function(){
   const lang=this.value;
+  if(!lang) return;
+
   const interval=setInterval(function(){
     const googleSelect=document.querySelector(".goog-te-combo");
     if(googleSelect){
@@ -895,6 +733,72 @@ document.getElementById("languageSelect").addEventListener("change",function(){
 </script>
 
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "PASTE_YOUR_SUPABASE_URL_HERE";
+const SUPABASE_ANON_KEY = "PASTE_YOUR_SUPABASE_ANON_KEY_HERE";
+
+let supabaseClient = null;
+
+if(
+  SUPABASE_URL !== "PASTE_YOUR_SUPABASE_URL_HERE" &&
+  SUPABASE_ANON_KEY !== "PASTE_YOUR_SUPABASE_ANON_KEY_HERE"
+){
+  supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+}
+
+function formToObject(form){
+  return Object.fromEntries(new FormData(form).entries());
+}
+
+document.getElementById("employerForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const status = document.getElementById("employerStatus");
+  status.textContent = "Sending...";
+
+  const data = formToObject(this);
+
+  if(!supabaseClient){
+    status.textContent = "Supabase is not connected yet. Please add your Supabase URL and anon key.";
+    return;
+  }
+
+  const { error } = await supabaseClient.from("employers").insert([data]);
+
+  if(error){
+    status.textContent = "Error: " + error.message;
+  }else{
+    status.textContent = "Thank you. Your employer enquiry has been received.";
+    this.reset();
+  }
+});
+
+document.getElementById("candidateForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const status = document.getElementById("candidateStatus");
+  status.textContent = "Submitting...";
+
+  const data = formToObject(this);
+
+  if(!supabaseClient){
+    status.textContent = "Supabase is not connected yet. Please add your Supabase URL and anon key.";
+    return;
+  }
+
+  const { error } = await supabaseClient.from("candidates").insert([data]);
+
+  if(error){
+    status.textContent = "Error: " + error.message;
+  }else{
+    status.textContent = "Thank you. Your registration has been received.";
+    this.reset();
+  }
+});
+</script>
 
 </body>
 </html>
