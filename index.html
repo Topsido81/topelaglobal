@@ -346,6 +346,30 @@ textarea{
 .candidateForm.active-form{
   display:grid;
 }
+  .hidden-form{
+  display:none !important;
+}
+
+.active-form{
+  display:grid !important;
+  gap:14px;
+  margin-top:25px;
+}
+
+.candidateForm{
+  gap:14px;
+  margin-top:25px;
+}
+
+.candidateForm label{
+  font-weight:700;
+  color:#0b3c78;
+}
+
+.formStatus{
+  font-weight:800;
+  color:#0b3c78;
+}
 
 .founder{
   display:grid;
@@ -666,7 +690,7 @@ footer a{
         <option value="consultationForm">General Consultation</option>
       </select>
 
-      <form id="workForm" class="candidateForm hidden-form">
+      <form id="workForm" class="candidateForm hidden-form" enctype="multipart/form-data">
         <h3>Work / Recruitment / Work Visa Form</h3>
         <input name="full_name" type="text" placeholder="Full name" required>
         <input name="email" type="email" placeholder="Email" required>
@@ -712,6 +736,18 @@ footer a{
 
         <textarea name="message" placeholder="Tell us about your work experience and skills" required></textarea>
 
+        <label>Upload CV / Resume</label>
+        <input name="cv_file" type="file" accept=".pdf,.doc,.docx">
+
+        <label>Upload Passport Bio Page</label>
+        <input name="passport_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+        <label>Upload Certificate / Work Document</label>
+        <input name="certificate_file" type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+
+        <label>Upload Police Clearance if Available</label>
+        <input name="police_clearance_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
         <input type="hidden" name="application_type" value="Work / Recruitment / Work Visa">
         <input type="hidden" name="visa_category" value="Work Visa">
 
@@ -719,7 +755,7 @@ footer a{
         <p class="formStatus"></p>
       </form>
 
-      <form id="studyForm" class="candidateForm hidden-form">
+      <form id="studyForm" class="candidateForm hidden-form" enctype="multipart/form-data">
         <h3>Study Visa Support Form</h3>
         <input name="full_name" type="text" placeholder="Full name" required>
         <input name="email" type="email" placeholder="Email" required>
@@ -766,6 +802,21 @@ footer a{
 
         <textarea name="message" placeholder="Tell us your study goal, course interest, and support needed" required></textarea>
 
+        <label>Upload Passport Bio Page</label>
+        <input name="passport_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+        <label>Upload Admission Letter if Available</label>
+        <input name="admission_letter_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+        <label>Upload Proof of Funds / Bank Statement</label>
+        <input name="proof_of_funds_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+        <label>Upload Sponsor Document if Applicable</label>
+        <input name="sponsor_document_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+        <label>Upload Academic Certificate</label>
+        <input name="certificate_file" type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+
         <input type="hidden" name="application_type" value="Study Visa Support">
         <input type="hidden" name="visa_category" value="Study Visa">
 
@@ -773,7 +824,7 @@ footer a{
         <p class="formStatus"></p>
       </form>
 
-      <form id="touristForm" class="candidateForm hidden-form">
+      <form id="touristForm" class="candidateForm hidden-form" enctype="multipart/form-data">
         <h3>Tourist / Visitor Visa Support Form</h3>
         <input name="full_name" type="text" placeholder="Full name" required>
         <input name="email" type="email" placeholder="Email" required>
@@ -813,6 +864,18 @@ footer a{
 
         <textarea name="message" placeholder="Purpose of visit, planned travel date, and support needed" required></textarea>
 
+        <label>Upload Passport Bio Page</label>
+        <input name="passport_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+        <label>Upload Proof of Funds / Bank Statement</label>
+        <input name="proof_of_funds_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+        <label>Upload Travel History / Previous Visa if Available</label>
+        <input name="travel_history_document_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+        <label>Upload Sponsor / Invitation Document if Applicable</label>
+        <input name="sponsor_document_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
         <input type="hidden" name="application_type" value="Tourist / Visitor Visa Support">
         <input type="hidden" name="visa_category" value="Tourist / Visitor Visa">
 
@@ -820,7 +883,7 @@ footer a{
         <p class="formStatus"></p>
       </form>
 
-      <form id="aupairForm" class="candidateForm hidden-form">
+      <form id="aupairForm" class="candidateForm hidden-form" enctype="multipart/form-data">
         <h3>Au Pair Visa Support Form</h3>
         <input name="full_name" type="text" placeholder="Full name" required>
         <input name="email" type="email" placeholder="Email" required>
@@ -852,6 +915,18 @@ footer a{
 
         <textarea name="message" placeholder="Tell us why you want to become an au pair" required></textarea>
 
+        <label>Upload CV / Profile</label>
+        <input name="cv_file" type="file" accept=".pdf,.doc,.docx">
+
+        <label>Upload Passport Bio Page</label>
+        <input name="passport_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+        <label>Upload Childcare Certificate / Reference if Available</label>
+        <input name="certificate_file" type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
+
+        <label>Upload Police Clearance if Available</label>
+        <input name="police_clearance_file" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
         <input type="hidden" name="application_type" value="Au Pair Visa Support">
         <input type="hidden" name="visa_category" value="Au Pair Visa">
 
@@ -859,7 +934,7 @@ footer a{
         <p class="formStatus"></p>
       </form>
 
-      <form id="consultationForm" class="candidateForm hidden-form">
+      <form id="consultationForm" class="candidateForm hidden-form" enctype="multipart/form-data">
         <h3>General Consultation Form</h3>
         <input name="full_name" type="text" placeholder="Full name" required>
         <input name="email" type="email" placeholder="Email" required>
@@ -868,6 +943,9 @@ footer a{
         <input name="target_country" type="text" placeholder="Target country">
 
         <textarea name="message" placeholder="Tell us what support you need" required></textarea>
+
+        <label>Upload Supporting Document if Any</label>
+        <input name="extra_documents_file" type="file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx">
 
         <input type="hidden" name="application_type" value="General Consultation">
         <input type="hidden" name="visa_category" value="Consultation">
@@ -977,14 +1055,60 @@ document.addEventListener("DOMContentLoaded", function(){
     return formData.get(name) || "";
   }
 
+  function cleanFileName(fileName){
+    return fileName.replace(/[^a-zA-Z0-9._-]/g, "_");
+  }
+
+  async function uploadFile(file, folder){
+    if(!file || file.size === 0){
+      return "";
+    }
+
+    try{
+      const filePath = folder + "/" + Date.now() + "_" + cleanFileName(file.name);
+
+      const { error } = await supabaseClient.storage
+        .from("candidate-documents")
+        .upload(filePath, file, {
+          cacheControl: "3600",
+          upsert: true
+        });
+
+      if(error){
+        console.warn("Upload failed:", error.message);
+        return "";
+      }
+
+      const { data } = supabaseClient.storage
+        .from("candidate-documents")
+        .getPublicUrl(filePath);
+
+      return data.publicUrl || "";
+
+    }catch(err){
+      console.warn("Upload error:", err.message);
+      return "";
+    }
+  }
+
   allCandidateForms.forEach(function(form){
     form.addEventListener("submit", async function(e){
       e.preventDefault();
 
       const status = this.querySelector(".formStatus");
-      status.textContent = "Submitting...";
+      status.textContent = "Uploading documents and submitting...";
 
       const formData = new FormData(this);
+
+      const cvUrl = await uploadFile(formData.get("cv_file"), "cv");
+      const passportUrl = await uploadFile(formData.get("passport_file"), "passport");
+      const certificateUrl = await uploadFile(formData.get("certificate_file"), "certificates");
+      const proofOfFundsUrl = await uploadFile(formData.get("proof_of_funds_file"), "proof-of-funds");
+      const admissionLetterUrl = await uploadFile(formData.get("admission_letter_file"), "admission-letters");
+      const sponsorDocumentUrl = await uploadFile(formData.get("sponsor_document_file"), "sponsor-documents");
+      const travelHistoryDocumentUrl = await uploadFile(formData.get("travel_history_document_file"), "travel-history");
+      const policeClearanceUrl = await uploadFile(formData.get("police_clearance_file"), "police-clearance");
+      const extraDocumentsUrl = await uploadFile(formData.get("extra_documents_file"), "extra-documents");
 
       const data = {
         full_name: textValue(formData, "full_name"),
@@ -999,6 +1123,7 @@ document.addEventListener("DOMContentLoaded", function(){
         years_experience: textValue(formData, "years_experience"),
         passport_status: textValue(formData, "passport_status"),
         passport_expiry_date: textValue(formData, "passport_expiry_date") || null,
+        availability: textValue(formData, "availability"),
         education_level: textValue(formData, "education_level"),
         school_admission_status: textValue(formData, "school_admission_status"),
         proof_of_funds_status: textValue(formData, "proof_of_funds_status"),
@@ -1007,9 +1132,17 @@ document.addEventListener("DOMContentLoaded", function(){
         visa_refusal_history: textValue(formData, "visa_refusal_history"),
         childcare_experience: textValue(formData, "childcare_experience"),
         au_pair_experience: textValue(formData, "au_pair_experience"),
-        availability: textValue(formData, "availability"),
         message: textValue(formData, "message"),
-        consent: "Yes"
+        consent: "Yes",
+        cv_url: cvUrl,
+        passport_url: passportUrl,
+        certificate_url: certificateUrl,
+        proof_of_funds_url: proofOfFundsUrl,
+        admission_letter_url: admissionLetterUrl,
+        sponsor_document_url: sponsorDocumentUrl,
+        travel_history_document_url: travelHistoryDocumentUrl,
+        police_clearance_url: policeClearanceUrl,
+        extra_documents_url: extraDocumentsUrl
       };
 
       const { error } = await supabaseClient
@@ -1022,7 +1155,7 @@ document.addEventListener("DOMContentLoaded", function(){
         return;
       }
 
-      status.textContent = "✅ Submitted successfully.";
+      status.textContent = "✅ Submitted successfully. Documents uploaded where provided.";
       this.reset();
     });
   });
