@@ -730,24 +730,13 @@ document.getElementById("languageSelect").addEventListener("change",function(){
     }
   },300);
 });
-</script>
-
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 const SUPABASE_URL = "https://ytspisjrufbdrqkvwjky.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J";
 
-let supabaseClient = null;
-
-if(
-  SUPABASE_URL !== "https://ytspisjrufbdrqkvwjky.supabase.co" &&
-  SUPABASE_ANON_KEY !== "sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J"
-){
-  supabaseClient = supabase.createClient(https://ytspisjrufbdrqkvwjk.supabase.co, sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J);
-}
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 function formToObject(form){
   return Object.fromEntries(new FormData(form).entries());
@@ -760,11 +749,6 @@ document.getElementById("employerForm").addEventListener("submit", async functio
   status.textContent = "Sending...";
 
   const data = formToObject(this);
-
-  if(!supabaseClient){
-    status.textContent = "Supabase is not connected yet. Please add your Supabase URL and anon key.";
-    return;
-  }
 
   const { error } = await supabaseClient.from("employers").insert([data]);
 
@@ -784,11 +768,6 @@ document.getElementById("candidateForm").addEventListener("submit", async functi
 
   const data = formToObject(this);
 
-  if(!supabaseClient){
-    status.textContent = "Supabase is not connected yet. Please add your Supabase URL and anon key.";
-    return;
-  }
-
   const { error } = await supabaseClient.from("candidates").insert([data]);
 
   if(error){
@@ -799,6 +778,3 @@ document.getElementById("candidateForm").addEventListener("submit", async functi
   }
 });
 </script>
-
-</body>
-</html>
