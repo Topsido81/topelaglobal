@@ -737,14 +737,14 @@ document.getElementById("languageSelect").addEventListener("change",function(){
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-const SUPABASE_URL = "PASTE_YOUR_SUPABASE_URL_HERE";
-const SUPABASE_ANON_KEY = "PASTE_YOUR_SUPABASE_ANON_KEY_HERE";
+const SUPABASE_URL = "https://ytspisjrufbdrqkvwjky.supabase.co/rest/v1/";
+const SUPABASE_ANON_KEY = "sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J";
 
 let supabaseClient = null;
 
 if(
-  SUPABASE_URL !== "PASTE_YOUR_SUPABASE_URL_HERE" &&
-  SUPABASE_ANON_KEY !== "PASTE_YOUR_SUPABASE_ANON_KEY_HERE"
+  SUPABASE_URL !== "sb_publishable_DMDv9QwmObL9F4PeaWGWvg_2P9_tr5J" &&
+  SUPABASE_ANON_KEY !== "https://ytspisjrufbdrqkvwjky.supabase.co/rest/v1/"
 ){
   supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 }
