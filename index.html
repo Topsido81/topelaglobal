@@ -435,6 +435,657 @@ footer a{
     width:100%;
     text-align:center;
   }
+
+/* =========================================================
+   TOPELA GLOBAL — OPPORTUNITY PACKAGES SECTION
+   Paste this CSS immediately before the closing </style> tag.
+========================================================= */
+
+.package-season{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(212,175,55,.18),transparent 28%),
+    radial-gradient(circle at 85% 80%,rgba(11,60,120,.14),transparent 32%),
+    linear-gradient(180deg,#ffffff 0%,#f7f4ed 100%);
+}
+
+.package-season::before,
+.package-season::after{
+  content:"";
+  position:absolute;
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  filter:blur(3px);
+  pointer-events:none;
+  opacity:.25;
+}
+
+.package-season::before{
+  top:-150px;
+  left:-110px;
+  background:var(--gold);
+}
+
+.package-season::after{
+  right:-120px;
+  bottom:-160px;
+  background:var(--blue);
+}
+
+.package-container{
+  position:relative;
+  z-index:2;
+  max-width:1450px;
+  margin:auto;
+}
+
+.package-eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  background:rgba(212,175,55,.16);
+  color:var(--blue);
+  border:1px solid rgba(212,175,55,.65);
+  border-radius:999px;
+  padding:8px 15px;
+  font-weight:900;
+  font-size:14px;
+  letter-spacing:.3px;
+}
+
+.package-intro{
+  max-width:850px;
+  margin:12px auto 0;
+  text-align:center;
+}
+
+.package-controls{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:15px;
+  max-width:900px;
+  margin:35px auto 22px;
+}
+
+.package-search-wrap{
+  position:relative;
+}
+
+.package-search-wrap span{
+  position:absolute;
+  left:16px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:20px;
+  pointer-events:none;
+}
+
+#packageSearch{
+  padding-left:50px;
+  border:2px solid transparent;
+  box-shadow:0 8px 25px rgba(6,23,45,.08);
+}
+
+#packageSearch:focus,
+#packageCategory:focus{
+  border-color:var(--gold);
+  outline:none;
+  box-shadow:0 0 0 4px rgba(212,175,55,.16);
+}
+
+.package-tabs{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:15px 0 35px;
+}
+
+.package-tab{
+  border:1px solid #d9dee6;
+  background:#fff;
+  color:var(--blue);
+  padding:10px 16px;
+  border-radius:999px;
+  font-weight:900;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.package-tab:hover,
+.package-tab.active{
+  color:#fff;
+  background:var(--blue);
+  border-color:var(--blue);
+  transform:translateY(-2px);
+}
+
+.serbia-spotlight{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  align-items:center;
+  gap:38px;
+  margin:25px 0 45px;
+  padding:45px;
+  border-radius:28px;
+  color:#fff;
+  background:
+    linear-gradient(120deg,rgba(6,23,45,.97),rgba(11,60,120,.93)),
+    url("assets/img/workforce-banner.jpg");
+  background-size:cover;
+  background-position:center;
+  box-shadow:0 24px 65px rgba(6,23,45,.25);
+  border:2px solid rgba(212,175,55,.7);
+}
+
+.serbia-spotlight::after{
+  content:"";
+  position:absolute;
+  width:320px;
+  height:320px;
+  right:-130px;
+  top:-140px;
+  border-radius:50%;
+  background:rgba(212,175,55,.2);
+}
+
+.serbia-copy,
+.serbia-side{
+  position:relative;
+  z-index:2;
+}
+
+.serbia-live-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:9px 15px;
+  margin-bottom:16px;
+  color:#111;
+  background:var(--gold);
+  border-radius:999px;
+  font-weight:900;
+}
+
+.serbia-live-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#0c8a43;
+  box-shadow:0 0 0 0 rgba(12,138,67,.7);
+  animation:serbiaPulse 1.8s infinite;
+}
+
+@keyframes serbiaPulse{
+  0%{box-shadow:0 0 0 0 rgba(12,138,67,.7)}
+  70%{box-shadow:0 0 0 12px rgba(12,138,67,0)}
+  100%{box-shadow:0 0 0 0 rgba(12,138,67,0)}
+}
+
+.serbia-spotlight h2{
+  color:#fff;
+  font-size:clamp(32px,5vw,58px);
+  line-height:1.05;
+  margin:0 0 18px;
+}
+
+.serbia-spotlight h2 span{
+  color:var(--gold);
+}
+
+.serbia-summary{
+  font-size:18px;
+  color:rgba(255,255,255,.9);
+}
+
+.serbia-points{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:25px 0;
+}
+
+.serbia-point{
+  padding:14px;
+  border-radius:13px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.2);
+  backdrop-filter:blur(8px);
+}
+
+.serbia-point strong{
+  display:block;
+  color:var(--gold);
+  font-size:18px;
+}
+
+.serbia-side{
+  display:grid;
+  gap:15px;
+}
+
+.serbia-info-card{
+  padding:20px;
+  border-radius:16px;
+  background:#fff;
+  color:var(--text);
+  border-left:5px solid var(--gold);
+  box-shadow:0 10px 28px rgba(0,0,0,.18);
+}
+
+.serbia-info-card h3{
+  margin:0 0 8px;
+  color:var(--blue);
+}
+
+.serbia-info-card p{
+  margin:0;
+}
+
+.serbia-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.serbia-buttons .btn{
+  margin:0;
+}
+
+.serbia-outline-btn{
+  background:transparent;
+  color:#fff;
+  border:2px solid var(--gold);
+}
+
+.serbia-outline-btn:hover{
+  background:var(--gold);
+  color:#111;
+}
+
+.package-disclaimer{
+  background:#fff8dc;
+  border:1px solid #e4ca74;
+  border-left:6px solid var(--gold);
+  padding:18px;
+  border-radius:12px;
+  margin:0 0 28px;
+}
+
+.package-disclaimer strong{
+  color:var(--blue);
+}
+
+.package-results{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+#packageResultCount{
+  color:var(--blue);
+  font-weight:900;
+}
+
+.package-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(285px,1fr));
+  gap:24px;
+}
+
+.package-card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  min-height:390px;
+  background:#fff;
+  border-radius:18px;
+  border:1px solid rgba(11,60,120,.1);
+  border-top:5px solid var(--gold);
+  box-shadow:0 10px 32px rgba(6,23,45,.09);
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+
+.package-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 22px 44px rgba(6,23,45,.15);
+}
+
+.package-card.featured-package{
+  border:2px solid var(--gold);
+  border-top:7px solid var(--gold);
+  box-shadow:0 13px 40px rgba(212,175,55,.22);
+}
+
+.package-ribbon{
+  position:absolute;
+  top:17px;
+  right:-38px;
+  width:150px;
+  padding:7px 0;
+  text-align:center;
+  transform:rotate(42deg);
+  background:var(--gold);
+  color:#111;
+  font-size:11px;
+  font-weight:900;
+  z-index:3;
+}
+
+.package-card-top{
+  padding:25px 25px 15px;
+  background:linear-gradient(135deg,#ffffff,#f7f4ed);
+}
+
+.package-country{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:9px;
+}
+
+.package-flag{
+  font-size:31px;
+}
+
+.package-country h3{
+  margin:0;
+  color:var(--blue);
+  font-size:23px;
+}
+
+.package-type{
+  display:inline-block;
+  background:rgba(11,60,120,.1);
+  color:var(--blue);
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+}
+
+.package-body{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:20px 25px 25px;
+}
+
+.package-description{
+  margin-top:0;
+}
+
+.package-mini-list{
+  display:grid;
+  gap:9px;
+  margin:5px 0 18px;
+}
+
+.package-mini-item{
+  display:flex;
+  gap:9px;
+  align-items:flex-start;
+  font-size:14px;
+}
+
+.package-mini-item span:first-child{
+  flex:0 0 auto;
+}
+
+.package-card-actions{
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-top:auto;
+}
+
+.package-card-actions button,
+.package-card-actions a{
+  flex:1;
+  min-width:120px;
+  text-align:center;
+  padding:11px 13px;
+  border-radius:8px;
+  border:none;
+  text-decoration:none;
+  font-weight:900;
+  cursor:pointer;
+}
+
+.package-details-btn{
+  background:var(--blue);
+  color:#fff;
+}
+
+.package-whatsapp-btn{
+  background:var(--gold);
+  color:#111;
+}
+
+.package-empty{
+  grid-column:1/-1;
+  padding:45px 20px;
+  text-align:center;
+  background:#fff;
+  border-radius:18px;
+  border:2px dashed #d4d9e0;
+}
+
+.market-insight{
+  margin-top:55px;
+  padding:35px;
+  border-radius:22px;
+  color:#fff;
+  background:linear-gradient(135deg,var(--dark),var(--blue));
+}
+
+.market-insight h3{
+  color:var(--gold);
+  font-size:28px;
+  margin-top:0;
+}
+
+.market-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:14px;
+  margin-top:20px;
+}
+
+.market-item{
+  padding:17px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:13px;
+  background:rgba(255,255,255,.08);
+}
+
+.market-item strong{
+  display:block;
+  color:var(--gold);
+}
+
+.package-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:20000;
+  padding:20px;
+  background:rgba(1,10,22,.82);
+  backdrop-filter:blur(7px);
+  overflow:auto;
+}
+
+.package-modal.open{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation:modalFadeIn .25s ease;
+}
+
+@keyframes modalFadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+.package-modal-content{
+  position:relative;
+  width:min(780px,100%);
+  max-height:92vh;
+  overflow:auto;
+  background:#fff;
+  border-radius:22px;
+  padding:35px;
+  border-top:7px solid var(--gold);
+  box-shadow:0 25px 75px rgba(0,0,0,.35);
+}
+
+.package-modal-close{
+  position:absolute;
+  top:15px;
+  right:15px;
+  width:40px;
+  height:40px;
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+  background:var(--blue);
+  color:#fff;
+  font-size:22px;
+  font-weight:900;
+}
+
+.package-modal-title{
+  padding-right:45px;
+  color:var(--blue);
+  margin:0 0 5px;
+  font-size:30px;
+}
+
+.package-modal-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  margin:22px 0;
+}
+
+.package-modal-box{
+  padding:17px;
+  background:var(--cream);
+  border-radius:12px;
+  border-left:4px solid var(--gold);
+}
+
+.package-modal-box h4{
+  color:var(--blue);
+  margin:0 0 8px;
+}
+
+.package-modal-box ul{
+  margin:0;
+  padding-left:19px;
+}
+
+.serbia-attention-bar{
+  position:fixed;
+  left:50%;
+  bottom:18px;
+  z-index:15000;
+  width:min(740px,calc(100% - 28px));
+  transform:translate(-50%,140%);
+  opacity:0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:15px 18px;
+  color:#fff;
+  background:linear-gradient(110deg,var(--dark),var(--blue));
+  border:2px solid var(--gold);
+  border-radius:16px;
+  box-shadow:0 18px 55px rgba(0,0,0,.35);
+  transition:.55s ease;
+}
+
+.serbia-attention-bar.show{
+  transform:translate(-50%,0);
+  opacity:1;
+}
+
+.serbia-attention-text strong{
+  display:block;
+  color:var(--gold);
+}
+
+.serbia-attention-actions{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.serbia-attention-actions a{
+  white-space:nowrap;
+  color:#111;
+  background:var(--gold);
+  padding:10px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:900;
+}
+
+.serbia-attention-close{
+  border:none;
+  background:transparent;
+  color:#fff;
+  font-size:23px;
+  cursor:pointer;
+}
+
+@media(max-width:950px){
+  .serbia-spotlight{
+    grid-template-columns:1fr;
+  }
+
+  .package-controls{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:650px){
+  .serbia-spotlight{
+    padding:28px 20px;
+  }
+
+  .serbia-points,
+  .package-modal-grid{
+    grid-template-columns:1fr;
+  }
+
+  .market-insight,
+  .package-modal-content{
+    padding:25px 20px;
+  }
+
+  .package-results{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .serbia-attention-bar{
+    align-items:flex-start;
+  }
+
+  .serbia-attention-actions{
+    flex-direction:column;
+  }
 }
 </style>
 </head>
@@ -474,6 +1125,7 @@ footer a{
     <a href="#employers">Employers</a>
     <a href="#process">Process</a>
     <a href="#industries">Industries</a>
+    <a href="#packages">Packages</a>
     <a href="#partners">Partners</a>
     <a href="#candidates">Candidates</a>
     <a href="#founder">Founder</a>
@@ -508,6 +1160,303 @@ footer a{
 <div class="marquee-wrapper">
   <div class="marquee-content">
     Workforce Recruitment • Candidate Screening • Employer Partnerships • Healthcare • Hospitality • Construction • Agriculture • Logistics • Manufacturing • Legal Pathways
+  </div>
+</div>
+  <section id="employers" class="light">
+    <!-- ========================================================
+     TOPELA GLOBAL — AVAILABLE OPPORTUNITY PACKAGES
+     Paste immediately after the marquee section.
+========================================================= -->
+
+<section id="packages" class="package-season">
+  <div class="package-container">
+
+    <div class="section-title">
+      <div class="package-eyebrow">🌍 Explore verified pathways</div>
+      <h2>Work, Study, Visa & Mobility Packages</h2>
+
+      <p class="package-intro">
+        Browse our available international pathways before contacting us.
+        Select a country or programme, review the basic requirements and
+        submit an application only when the opportunity matches your profile.
+      </p>
+    </div>
+
+    <!-- SERBIA FEATURED OPPORTUNITY -->
+    <article class="serbia-spotlight" id="serbia-feature">
+      <div class="serbia-copy">
+
+        <div class="serbia-live-badge">
+          <span class="serbia-live-dot"></span>
+          Featured fast-processing pathway
+        </div>
+
+        <h2>
+          Serbia Work Permit
+          <span>& Visa Pathway</span>
+        </h2>
+
+        <p class="serbia-summary">
+          Serbia is receiving special attention because of its electronic
+          immigration system, employer-led applications and comparatively
+          streamlined single residence and work permit procedure.
+        </p>
+
+        <div class="serbia-points">
+          <div class="serbia-point">
+            <strong>Available roles</strong>
+            Construction, tiling, bricklaying, masonry, factory and warehouse
+          </div>
+
+          <div class="serbia-point">
+            <strong>Indicative salary</strong>
+            Approximately €600–€700 monthly for the general package
+          </div>
+
+          <div class="serbia-point">
+            <strong>Employer support</strong>
+            Accommodation and one meal may be provided
+          </div>
+
+          <div class="serbia-point">
+            <strong>Permit route</strong>
+            Employer-supported residence and work authorisation
+          </div>
+        </div>
+
+        <div class="serbia-buttons">
+          <button
+            class="btn"
+            type="button"
+            onclick="openPackageModal('serbia')">
+            View Serbia Details
+          </button>
+
+          <a
+            class="btn serbia-outline-btn"
+            href="#candidate-form"
+            onclick="prepareSerbiaApplication()">
+            Apply for Serbia
+          </a>
+
+          <a
+            class="btn serbia-outline-btn"
+            href="https://wa.me/353871802797?text=Hello%20TOPELA%20GLOBAL%2C%20I%20want%20to%20check%20my%20eligibility%20for%20the%20Serbia%20work%20permit%20and%20visa%20pathway."
+            target="_blank"
+            rel="noopener">
+            Check Eligibility
+          </a>
+        </div>
+      </div>
+
+      <div class="serbia-side">
+        <div class="serbia-info-card">
+          <h3>⚡ Official single-permit procedure</h3>
+          <p>
+            A properly completed electronic single-permit request may be
+            decided within 15 days. This official period begins after a
+            complete request has been submitted and does not include
+            recruitment, document preparation, Visa D or embassy waiting time.
+          </p>
+        </div>
+
+        <div class="serbia-info-card">
+          <h3>📄 General candidate documents</h3>
+          <p>
+            CV, valid passport, employment or training evidence, police
+            clearance, medical report, passport photograph, reference,
+            signature and any employer-requested work video.
+          </p>
+        </div>
+
+        <div class="serbia-info-card">
+          <h3>🛡️ Important protection</h3>
+          <p>
+            No job, work permit or visa is guaranteed. Final approval remains
+            with the employer and the relevant Serbian authorities.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <div class="package-disclaimer">
+      <strong>Before you apply:</strong>
+      Job availability, salary, accommodation, nationality eligibility,
+      tuition, service charges, embassy rules and processing periods can
+      change. Every applicant must receive a current written offer and
+      requirements before making a payment. TOPELA GLOBAL does not guarantee
+      employment, admission, permits or visas.
+    </div>
+
+    <!-- SEARCH AND FILTERS -->
+    <div class="package-controls">
+      <div class="package-search-wrap">
+        <span>🔎</span>
+        <input
+          id="packageSearch"
+          type="search"
+          placeholder="Search country, job, study route or programme..."
+          aria-label="Search opportunity packages">
+      </div>
+
+      <select id="packageCategory" aria-label="Filter package category">
+        <option value="all">All programme types</option>
+        <option value="work">Work permits</option>
+        <option value="study">Study pathways</option>
+        <option value="tourist">Tourist invitations</option>
+        <option value="sports">Sports tryouts</option>
+        <option value="business">Business & remote work</option>
+        <option value="maritime">Maritime work</option>
+      </select>
+    </div>
+
+    <div class="package-tabs" aria-label="Quick package filters">
+      <button class="package-tab active" type="button" data-filter="all">
+        All Packages
+      </button>
+
+      <button class="package-tab" type="button" data-filter="work">
+        Work
+      </button>
+
+      <button class="package-tab" type="button" data-filter="study">
+        Study
+      </button>
+
+      <button class="package-tab" type="button" data-filter="tourist">
+        Tourist
+      </button>
+
+      <button class="package-tab" type="button" data-filter="sports">
+        Sports
+      </button>
+
+      <button class="package-tab" type="button" data-filter="business">
+        Business
+      </button>
+
+      <button class="package-tab" type="button" data-filter="maritime">
+        Maritime
+      </button>
+    </div>
+
+    <div class="package-results">
+      <div id="packageResultCount">Loading available packages...</div>
+
+      <a href="#candidate-form" class="btn">
+        Start an Application
+      </a>
+    </div>
+
+    <!-- PACKAGE CARDS ARE GENERATED BY JAVASCRIPT -->
+    <div class="package-grid" id="packageGrid"></div>
+
+    <!-- EXTERNAL MARKET INFORMATION -->
+    <div class="market-insight">
+      <h3>Current European Recruitment Market Snapshot</h3>
+
+      <p>
+        The examples below are drawn from a separate European recruitment
+        listing. They are shown for market awareness only and are not
+        automatically TOPELA GLOBAL offers. Availability and conditions must
+        be independently reconfirmed.
+      </p>
+
+      <div class="market-list">
+        <div class="market-item">
+          <strong>Serbia</strong>
+          Warehouse listing advertising approximately €850 monthly,
+          accommodation and insurance.
+        </div>
+
+        <div class="market-item">
+          <strong>Poland</strong>
+          Production, warehouse, boat manufacturing, carpentry and seasonal
+          agriculture listings.
+        </div>
+
+        <div class="market-item">
+          <strong>Lithuania</strong>
+          Specialist and construction routes, including bricklaying and
+          concrete work.
+        </div>
+
+        <div class="market-item">
+          <strong>Czech Republic</strong>
+          Seasonal greenhouse and construction listings.
+        </div>
+
+        <div class="market-item">
+          <strong>Hungary</strong>
+          Food warehouse opportunities connected to a Type D and temporary
+          residence route.
+        </div>
+
+        <div class="market-item">
+          <strong>Slovakia</strong>
+          Poultry-processing production opportunities.
+        </div>
+      </div>
+
+      <p style="margin-bottom:0;margin-top:20px;">
+        External reference:
+        <a
+          href="https://metaimmigrationservices.eu/offers.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color:#fff;text-decoration:underline;">
+          META Immigration Services offer page
+        </a>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PACKAGE DETAILS MODAL -->
+<div
+  class="package-modal"
+  id="packageModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="packageModalTitle">
+
+  <div class="package-modal-content">
+    <button
+      type="button"
+      class="package-modal-close"
+      id="packageModalClose"
+      aria-label="Close package details">
+      ×
+    </button>
+
+    <div id="packageModalBody"></div>
+  </div>
+</div>
+
+<!-- SERBIA ATTENTION NOTIFICATION -->
+<div
+  class="serbia-attention-bar"
+  id="serbiaAttentionBar"
+  aria-live="polite">
+
+  <div class="serbia-attention-text">
+    <strong>🇷🇸 Considering employment in Serbia?</strong>
+    Review the featured work permit information and check your eligibility.
+  </div>
+
+  <div class="serbia-attention-actions">
+    <a href="#serbia-feature" id="serbiaAttentionLink">
+      View Serbia
+    </a>
+
+    <button
+      type="button"
+      class="serbia-attention-close"
+      id="serbiaAttentionClose"
+      aria-label="Dismiss Serbia notification">
+      ×
+    </button>
   </div>
 </div>
 
@@ -1205,6 +2154,1340 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   }
 
+});
+</script>
+  <script>
+/* =========================================================
+   TOPELA GLOBAL — PACKAGE DIRECTORY JAVASCRIPT
+   Paste this script after your existing Supabase script
+   and immediately before the closing </body> tag.
+========================================================= */
+
+const opportunityPackages = [
+  {
+    id: "serbia",
+    country: "Serbia",
+    flag: "🇷🇸",
+    category: "work",
+    type: "Work Permit & Visa",
+    featured: true,
+    description:
+      "Employer-supported employment pathway for selected skilled and general workers.",
+    highlights: [
+      "Construction, tiling, bricklaying and masonry",
+      "Factory and warehouse opportunities",
+      "Indicative general-package salary: €600–€700 monthly",
+      "Accommodation and one meal may be provided",
+      "Belgrade and other Serbian cities"
+    ],
+    requirements: [
+      "Valid international passport",
+      "CV or résumé",
+      "Diploma, training or employment evidence",
+      "Relevant experience where required",
+      "Police clearance certificate",
+      "Medical report",
+      "Passport photograph",
+      "Reference letter and signature",
+      "Work-performance video for selected roles"
+    ],
+    process:
+      "Employer screening → job offer → supporting documents → Visa D or single-permit application → decision → travel and post-arrival registration.",
+    timeline:
+      "The official single-permit decision target is 15 days after a properly completed electronic request. Complete recruitment and travel preparation may take longer.",
+    note:
+      "Different Serbia employers and job categories have different salaries, requirements and total processing periods.",
+    search:
+      "serbia belgrade work permit visa construction tiller tiler bricklayer mason factory warehouse employment"
+  },
+
+  {
+    id: "poland-work",
+    country: "Poland",
+    flag: "🇵🇱",
+    category: "work",
+    type: "Work Permit",
+    description:
+      "Employment pathway covering production, warehouse, construction and selected skilled positions.",
+    highlights: [
+      "Welder and construction worker",
+      "Quality controller",
+      "Warehouse and production-line work",
+      "Seafood processing and packing",
+      "Employer accommodation may be available"
+    ],
+    requirements: [
+      "International passport",
+      "CV",
+      "Passport photographs",
+      "Reference letter",
+      "Medical report",
+      "Police clearance",
+      "Academic or technical certificate"
+    ],
+    process:
+      "Candidate assessment → employer selection → work permit documents → Type D visa application → travel.",
+    timeline:
+      "The supplied programme document gives an estimated three-to-five-month processing period.",
+    note:
+      "Final salary, working hours and benefits must appear in the signed employment offer.",
+    search:
+      "poland work permit welder warehouse production construction quality controller seafood factory"
+  },
+
+  {
+    id: "romania",
+    country: "Romania",
+    flag: "🇷🇴",
+    category: "work",
+    type: "Skilled & Semi-skilled Work",
+    description:
+      "Opportunities for experienced construction, engineering and communications professionals.",
+    highlights: [
+      "Plasterer",
+      "Thermal-system fitter",
+      "Natural-stone installer",
+      "Welder and shipyard fitter",
+      "Mechanical engineer",
+      "PR communications manager"
+    ],
+    requirements: [
+      "Valid passport",
+      "CV",
+      "Relevant experience",
+      "Professional or academic certificates",
+      "Police clearance",
+      "Medical report",
+      "Employer-requested evidence"
+    ],
+    process:
+      "Profile review → employer interview → contract → work authorisation → visa process.",
+    timeline:
+      "Depends on the vacancy, employer approval and embassy procedure.",
+    note:
+      "Some skilled positions require at least three years of relevant experience.",
+    search:
+      "romania skilled semi skilled plasterer thermal system stone installer welder engineer communications"
+  },
+
+  {
+    id: "bosnia",
+    country: "Bosnia and Herzegovina",
+    flag: "🇧🇦",
+    category: "work",
+    type: "Work Permit",
+    description:
+      "General and skilled employment opportunities in factories, construction, workshops and kitchens.",
+    highlights: [
+      "Factory workers",
+      "Construction helpers",
+      "Kitchen and workshop helpers",
+      "Carpenters",
+      "Steel fixers",
+      "Bricklayers"
+    ],
+    requirements: [
+      "CV",
+      "International passport",
+      "Police clearance",
+      "Education or apprenticeship certificate",
+      "Medical report",
+      "Reference letter",
+      "Work video for selected positions"
+    ],
+    process:
+      "Document review → employer assessment → legalisation or translation where required → work permit → visa.",
+    timeline:
+      "The supplied package gives an indicative one-to-two-month processing period.",
+    note:
+      "Some documents may require legalisation and translation before submission.",
+    search:
+      "bosnia work permit factory construction kitchen carpenter steel fixer bricklayer"
+  },
+
+  {
+    id: "north-macedonia",
+    country: "North Macedonia",
+    flag: "🇲🇰",
+    category: "work",
+    type: "Work Permit",
+    description:
+      "Construction and hospitality employment opportunities for selected international candidates.",
+    highlights: [
+      "Construction helpers",
+      "Skilled and unskilled construction workers",
+      "Kitchen helpers",
+      "Bartenders and waiters",
+      "Chefs and assistant chefs",
+      "Cleaners and housekeepers"
+    ],
+    requirements: [
+      "CV",
+      "Valid passport",
+      "High-school or vocational certificate",
+      "Police clearance",
+      "Medical report",
+      "Passport photograph",
+      "Work video for hospitality positions where requested"
+    ],
+    process:
+      "Candidate screening → employer assessment → permit documents → visa application.",
+    timeline:
+      "The supplied package gives an indicative one-to-two-month processing period.",
+    note:
+      "The listed salary range and benefits must be reconfirmed against the current employment contract.",
+    search:
+      "north macedonia work construction hospitality chef waiter bartender cleaner housekeeper"
+  },
+
+  {
+    id: "czech",
+    country: "Czech Republic",
+    flag: "🇨🇿",
+    category: "work",
+    type: "Work Permit",
+    description:
+      "Factory, warehouse and car-manufacturing opportunities for eligible candidates.",
+    highlights: [
+      "General factory worker",
+      "Warehouse work",
+      "Car-manufacturing plant",
+      "Shift-based employment",
+      "Employer accommodation may be provided"
+    ],
+    requirements: [
+      "CV",
+      "Valid international passport",
+      "Police clearance",
+      "Passport photograph",
+      "Medical report",
+      "Academic or technical certificate",
+      "Reference letter"
+    ],
+    process:
+      "Employer approval → work authorisation → visa preparation → embassy submission.",
+    timeline:
+      "Processing depends on document completeness, employer and embassy availability.",
+    note:
+      "A vacancy must be confirmed before an applicant pays for processing.",
+    search:
+      "czech republic work permit factory warehouse car manufacturing seasonal construction greenhouse"
+  },
+
+  {
+    id: "latvia-work",
+    country: "Latvia",
+    flag: "🇱🇻",
+    category: "work",
+    type: "Construction Work",
+    description:
+      "Construction-focused opportunity for skilled and support workers.",
+    highlights: [
+      "Bricklayer",
+      "Mason",
+      "Leveler",
+      "Concrete worker",
+      "Construction worker",
+      "Construction helper"
+    ],
+    requirements: [
+      "Valid passport",
+      "CV",
+      "Relevant skill or experience evidence",
+      "Police clearance",
+      "Medical report",
+      "Employer-requested work evidence"
+    ],
+    process:
+      "Skill assessment → employer selection → permit → visa submission.",
+    timeline:
+      "Confirmed individually after employer assessment.",
+    note:
+      "Position availability changes according to active employer demand.",
+    search:
+      "latvia work permit bricklayer mason leveler concrete construction helper"
+  },
+
+  {
+    id: "lithuania-maritime",
+    country: "Lithuania",
+    flag: "🇱🇹",
+    category: "maritime",
+    type: "Maritime Work Permit",
+    description:
+      "Specialist maritime and vessel-interior employment pathway.",
+    highlights: [
+      "Marine carpenter and joiner",
+      "Cabinet maker",
+      "Ceiling and partition installer",
+      "Marine pipe fitter",
+      "HVAC and ventilation installer",
+      "Interior metalworker and flooring specialist"
+    ],
+    requirements: [
+      "Maritime or technical CV",
+      "Valid passport",
+      "Proof of relevant experience",
+      "Trade certificate where available",
+      "Police clearance",
+      "Medical fitness evidence",
+      "Work-performance evidence where requested"
+    ],
+    process:
+      "Trade assessment → employer approval → permit documentation → visa and travel.",
+    timeline:
+      "Depends on the maritime employer and document readiness.",
+    note:
+      "This route is intended for experienced maritime or interior-fit-out workers.",
+    search:
+      "lithuania maritime marine carpenter joiner cabinet pipe fitter hvac ventilation ship interior"
+  },
+
+  {
+    id: "belarus",
+    country: "Belarus",
+    flag: "🇧🇾",
+    category: "work",
+    type: "Work Permit",
+    description:
+      "General employment pathway covering factory, maintenance, cleaning and vehicle-service work.",
+    highlights: [
+      "Factory worker",
+      "Maintenance worker",
+      "Cleaner",
+      "Car washer",
+      "Vehicle preparation worker",
+      "General auxiliary worker"
+    ],
+    requirements: [
+      "CV",
+      "Passport",
+      "Training or academic certificate",
+      "Medical report",
+      "Police clearance",
+      "Reference letter",
+      "Passport photograph"
+    ],
+    process:
+      "Employer selection → work documents → visa-support documentation → travel.",
+    timeline:
+      "The supplied package gives an indicative two-to-four-week permit-processing period.",
+    note:
+      "Entry and visa procedure depends on the applicant's nationality and embassy coverage.",
+    search:
+      "belarus work permit factory maintenance cleaner car washer vehicle auxiliary"
+  },
+
+  {
+    id: "georgia-work",
+    country: "Georgia",
+    flag: "🇬🇪",
+    category: "work",
+    type: "Work Opportunity",
+    description:
+      "Hands-on employment route for selected workers in industrial and support positions.",
+    highlights: [
+      "Factory work",
+      "Cleaning",
+      "Construction",
+      "Car washing",
+      "Agricultural work",
+      "Poultry work"
+    ],
+    requirements: [
+      "CV",
+      "International passport",
+      "Experience evidence where required",
+      "Police clearance",
+      "Medical report",
+      "Passport photograph",
+      "Academic certificate"
+    ],
+    process:
+      "Profile assessment → employer match → work authorisation and entry process.",
+    timeline:
+      "Confirmed after employer assessment.",
+    note:
+      "Georgia is not part of the Schengen Area.",
+    search:
+      "georgia work factory cleaner construction car wash agriculture poultry"
+  },
+
+  {
+    id: "albania",
+    country: "Albania",
+    flag: "🇦🇱",
+    category: "work",
+    type: "Work Permit & Visa",
+    description:
+      "Hospitality, construction, vehicle, manufacturing and specialist opportunities.",
+    highlights: [
+      "Kitchen helper and housekeeper",
+      "Chef, waiter and bartender",
+      "Carpenter and tailor",
+      "Car painter",
+      "Stone fabricator",
+      "Construction and gypsum workers"
+    ],
+    requirements: [
+      "Valid passport",
+      "CV",
+      "Work video for selected positions",
+      "Relevant skill evidence",
+      "Police clearance",
+      "Medical report",
+      "Employer-requested documents"
+    ],
+    process:
+      "Role selection → employer assessment → permit and visa documentation → travel.",
+    timeline:
+      "Varies by role, nationality and employer.",
+    note:
+      "Some vacancies have employer-specific nationality or experience preferences.",
+    search:
+      "albania work visa hospitality kitchen housekeeper chef waiter bartender carpenter tailor painter construction"
+  },
+
+  {
+    id: "ukraine",
+    country: "Ukraine",
+    flag: "🇺🇦",
+    category: "work",
+    type: "Work Permit",
+    description:
+      "Construction, factory and poultry employment programme listed in the supplied material.",
+    highlights: [
+      "Construction worker",
+      "Factory worker",
+      "Bricklayer",
+      "Window and aluminium installer",
+      "Metal-structure installer",
+      "Poultry-farm worker"
+    ],
+    requirements: [
+      "CV",
+      "Valid passport",
+      "Diploma or training certificate",
+      "Relevant experience",
+      "Medical report",
+      "Police clearance",
+      "Reference letter"
+    ],
+    process:
+      "Do not proceed without a current security, employer and travel assessment.",
+    timeline:
+      "Any current application period must be reconfirmed.",
+    note:
+      "Because of the continuing security situation, this programme must not be promoted as active without a new written risk and employer verification.",
+    search:
+      "ukraine work permit construction factory bricklayer aluminium metal poultry"
+  },
+
+  {
+    id: "finland-study",
+    country: "Finland",
+    flag: "🇫🇮",
+    category: "study",
+    type: "Study Pathway",
+    description:
+      "Undergraduate, master's and doctoral study-support pathway.",
+    highlights: [
+      "Healthcare and physiotherapy",
+      "Tourism and hospitality",
+      "Business administration",
+      "Logistics and mechatronics",
+      "Artificial intelligence",
+      "Maritime studies"
+    ],
+    requirements: [
+      "Academic certificates",
+      "Academic transcripts",
+      "Valid passport",
+      "Motivation letter",
+      "Proof of English proficiency where required",
+      "Proof of funds",
+      "University-specific documents"
+    ],
+    process:
+      "Course assessment → university application → admission → tuition commitment → residence-permit application.",
+    timeline:
+      "Depends on admission intake, university decision and residence-permit processing.",
+    note:
+      "Tuition and intake information must be reconfirmed with the selected institution.",
+    search:
+      "finland study undergraduate masters phd healthcare tourism business logistics mechatronics artificial intelligence maritime"
+  },
+
+  {
+    id: "canada-study",
+    country: "Canada",
+    flag: "🇨🇦",
+    category: "study",
+    type: "Study & Work",
+    description:
+      "Undergraduate and postgraduate admission-support pathway.",
+    highlights: [
+      "Undergraduate programmes",
+      "Master's programmes",
+      "Course-selection support",
+      "Admission-document preparation",
+      "Study-permit guidance"
+    ],
+    requirements: [
+      "Completed application",
+      "Valid passport",
+      "High-school certificate and transcript",
+      "Post-secondary documents where applicable",
+      "Bachelor's documents for master's applicants",
+      "CV",
+      "Statement of purpose",
+      "Proof of funds"
+    ],
+    process:
+      "Eligibility review → school application → admission decision → tuition deposit → study-permit application.",
+    timeline:
+      "Depends on school admission and current Canadian immigration processing.",
+    note:
+      "A school admission letter does not guarantee study-permit approval.",
+    search:
+      "canada study work undergraduate masters admission study permit"
+  },
+
+  {
+    id: "estonia-study",
+    country: "Estonia",
+    flag: "🇪🇪",
+    category: "study",
+    type: "Study Programme",
+    description:
+      "Bachelor's, master's and selected doctoral study opportunities.",
+    highlights: [
+      "Software development",
+      "Business innovation",
+      "International relations",
+      "Entrepreneurship",
+      "Physiotherapy and radiography",
+      "Selected doctoral research"
+    ],
+    requirements: [
+      "Academic certificate and transcript",
+      "Valid passport",
+      "Motivation letter",
+      "English-language evidence",
+      "Passport photographs",
+      "Interview",
+      "Programme-specific portfolio where needed"
+    ],
+    process:
+      "Academic screening → programme application → admission → residence-permit preparation.",
+    timeline:
+      "Depends on programme intake and institution.",
+    note:
+      "Fees and course availability should be confirmed directly with the institution.",
+    search:
+      "estonia study software business innovation international relations physiotherapy radiography phd"
+  },
+
+  {
+    id: "poland-study",
+    country: "Poland",
+    flag: "🇵🇱",
+    category: "study",
+    type: "Study & Work",
+    description:
+      "Admission pathways across medicine, business, engineering, IT, law and life sciences.",
+    highlights: [
+      "Medicine, dentistry, pharmacy and nursing",
+      "Business and human resources",
+      "Civil and mechanical engineering",
+      "Architecture",
+      "Cybersecurity and data science",
+      "Artificial intelligence and software development"
+    ],
+    requirements: [
+      "High-school certificate and transcript",
+      "Valid passport",
+      "Bachelor's documents for master's programmes",
+      "English-proficiency evidence",
+      "Motivation letter",
+      "Proof of funds"
+    ],
+    process:
+      "Course assessment → admission application → offer → financial preparation → visa application.",
+    timeline:
+      "Depends on institution, intake and embassy availability.",
+    note:
+      "Tuition and additional institutional expenses are subject to change.",
+    search:
+      "poland study medicine dentistry pharmacy nursing business engineering architecture cyber security data science artificial intelligence"
+  },
+
+  {
+    id: "latvia-study",
+    country: "Latvia",
+    flag: "🇱🇻",
+    category: "study",
+    type: "Study & Work",
+    description:
+      "Undergraduate and master's study support in business, computing, engineering and tourism.",
+    highlights: [
+      "Business economics and administration",
+      "Computer science and IT",
+      "Software engineering",
+      "Tourism and hospitality",
+      "Engineering management",
+      "Finance and communication"
+    ],
+    requirements: [
+      "High-school certificate and transcript",
+      "Passport",
+      "Academic testimonial",
+      "Bachelor's certificate for master's",
+      "English-proficiency evidence",
+      "Proof of tuition and living funds"
+    ],
+    process:
+      "Programme selection → admission → tuition commitment → residence-permit application.",
+    timeline:
+      "Depends on university intake and immigration processing.",
+    note:
+      "The supplied document states that this is not a scholarship programme.",
+    search:
+      "latvia study business computer science information technology software engineering tourism engineering finance"
+  },
+
+  {
+    id: "hungary-study",
+    country: "Hungary",
+    flag: "🇭🇺",
+    category: "study",
+    type: "Study & Work",
+    description:
+      "Undergraduate and master's admissions in business, technology, marketing and nursing.",
+    highlights: [
+      "Business administration",
+      "Business informatics",
+      "Computer science",
+      "International business",
+      "Marketing",
+      "Nursing and patient care"
+    ],
+    requirements: [
+      "School certificate and transcript",
+      "CV",
+      "Motivation letter",
+      "English-proficiency evidence",
+      "Valid passport",
+      "Bachelor's documents for master's",
+      "Interview or entrance examination"
+    ],
+    process:
+      "Academic review → application → admission → tuition and visa preparation.",
+    timeline:
+      "Depends on university and embassy processing.",
+    note:
+      "Application and entrance-examination fees may apply.",
+    search:
+      "hungary study business informatics computer science international business marketing nursing"
+  },
+
+  {
+    id: "luxembourg-study",
+    country: "Luxembourg",
+    flag: "🇱🇺",
+    category: "study",
+    type: "Study & Work",
+    description:
+      "Undergraduate and postgraduate admission and residence-support pathway.",
+    highlights: [
+      "European study destination",
+      "Undergraduate study support",
+      "Master's study support",
+      "Admission-document guidance",
+      "Residence application support"
+    ],
+    requirements: [
+      "Academic certificates",
+      "Academic transcripts",
+      "Valid passport",
+      "Language evidence",
+      "Motivation letter",
+      "Proof of funds",
+      "Institution-specific requirements"
+    ],
+    process:
+      "Programme selection → admission application → financial preparation → residence application.",
+    timeline:
+      "Depends on institution, programme and immigration authority.",
+    note:
+      "Admission and residence approval are separate decisions.",
+    search:
+      "luxembourg study work undergraduate masters admission residence"
+  },
+
+  {
+    id: "spain-digital",
+    country: "Spain",
+    flag: "🇪🇸",
+    category: "business",
+    type: "Digital Nomad",
+    description:
+      "Residence pathway for qualifying remote workers, freelancers and online-business professionals.",
+    highlights: [
+      "Remote workers",
+      "Freelancers",
+      "Online-business owners",
+      "Software and design professionals",
+      "Virtual assistants and marketers",
+      "Content creators"
+    ],
+    requirements: [
+      "Valid passport",
+      "Qualifying degree or professional experience",
+      "Evidence of remote employment or business",
+      "Proof of qualifying income",
+      "Health insurance",
+      "Police clearance",
+      "Other consular requirements"
+    ],
+    process:
+      "Eligibility review → evidence preparation → application through the appropriate legal route.",
+    timeline:
+      "Depends on consular jurisdiction and applicant circumstances.",
+    note:
+      "Income thresholds and immigration rules must be verified against current Spanish requirements.",
+    search:
+      "spain digital nomad remote freelancer online business software designer virtual assistant marketer"
+  },
+
+  {
+    id: "slovakia-business",
+    country: "Slovakia",
+    flag: "🇸🇰",
+    category: "business",
+    type: "Entrepreneurship Programme",
+    description:
+      "Business-registration and residence-support route for qualifying entrepreneurs.",
+    highlights: [
+      "Business registration",
+      "Residence application",
+      "Legal-address support",
+      "Document translation",
+      "Business-plan preparation",
+      "Interview preparation"
+    ],
+    requirements: [
+      "Valid passport",
+      "Qualifying financial evidence",
+      "Police clearance",
+      "Passport photograph",
+      "Business plan",
+      "Family documents where applicable",
+      "Translated documents where required"
+    ],
+    process:
+      "Embassy check → business preparation → company registration → residence documentation → visa or residence submission.",
+    timeline:
+      "The supplied material estimates several weeks for registration and document preparation.",
+    note:
+      "Applicants must first confirm that the responsible embassy will accept their application.",
+    search:
+      "slovakia entrepreneurship business company registration residence permit"
+  },
+
+  {
+    id: "serbia-sports",
+    country: "Serbia",
+    flag: "🇷🇸",
+    category: "sports",
+    type: "Basketball Tryout",
+    description:
+      "Sports-opportunity enquiry route for eligible basketball players.",
+    highlights: [
+      "Player-profile assessment",
+      "Sports CV preparation",
+      "Highlight-video review",
+      "Invitation guidance",
+      "Travel-document support"
+    ],
+    requirements: [
+      "Valid passport",
+      "Sports CV",
+      "Recent player photographs",
+      "Highlight or full-game video",
+      "Playing history",
+      "Medical fitness where requested"
+    ],
+    process:
+      "Player review → organiser confirmation → written invitation → visa and travel preparation.",
+    timeline:
+      "Depends on the organiser, trial date and visa procedure.",
+    note:
+      "A tryout invitation is not a professional contract or employment guarantee.",
+    search:
+      "serbia basketball sports tryout player invitation"
+  },
+
+  {
+    id: "spain-sports",
+    country: "Spain",
+    flag: "🇪🇸",
+    category: "sports",
+    type: "Football Tryout",
+    description:
+      "Football trial and invitation-support enquiry pathway.",
+    highlights: [
+      "Player-profile review",
+      "Football CV",
+      "Highlight-video assessment",
+      "Invitation support",
+      "Travel preparation"
+    ],
+    requirements: [
+      "Valid passport",
+      "Football CV",
+      "Player photos",
+      "Match or highlight video",
+      "Playing history",
+      "Medical fitness where required"
+    ],
+    process:
+      "Player assessment → organiser confirmation → invitation → visa preparation.",
+    timeline:
+      "Depends on event dates and organiser availability.",
+    note:
+      "Participation in a tryout does not guarantee a club contract.",
+    search:
+      "spain football sports tryout invitation player"
+  },
+
+  {
+    id: "italy-tourist-sports",
+    country: "Italy",
+    flag: "🇮🇹",
+    category: "tourist",
+    type: "Tourist Invitation / Football Tryout",
+    description:
+      "Visitor-support and separate football-trial enquiry pathway.",
+    highlights: [
+      "Tourist invitation guidance",
+      "Visitor-document checklist",
+      "Football profile assessment",
+      "Travel itinerary support",
+      "Application preparation"
+    ],
+    requirements: [
+      "Valid passport",
+      "Proof of funds",
+      "Travel purpose",
+      "Accommodation details",
+      "Travel insurance",
+      "Sports CV and video for tryout applicants"
+    ],
+    process:
+      "Purpose assessment → invitation or organiser review → visa-document preparation.",
+    timeline:
+      "Depends on consular appointment availability and travel dates.",
+    note:
+      "Tourist visa support and sports tryout support are separate services.",
+    search:
+      "italy tourist invitation football tryout visitor visa"
+  },
+
+  {
+    id: "estonia-tourist",
+    country: "Estonia",
+    flag: "🇪🇪",
+    category: "tourist",
+    type: "Tourist Invitation",
+    description:
+      "Visitor-visa documentation and invitation-support assessment.",
+    highlights: [
+      "Travel-purpose assessment",
+      "Invitation-document review",
+      "Proof-of-funds checklist",
+      "Travel itinerary guidance",
+      "Visa-document preparation"
+    ],
+    requirements: [
+      "Valid passport",
+      "Proof of funds",
+      "Travel insurance",
+      "Accommodation evidence",
+      "Return-ties evidence",
+      "Invitation where applicable"
+    ],
+    process:
+      "Profile review → supporting evidence → appointment and submission preparation.",
+    timeline:
+      "Depends on the responsible visa representation and appointment availability.",
+    note:
+      "Estonian visa representation may be handled by another Schengen state in some locations.",
+    search:
+      "estonia tourist invitation visitor visa"
+  },
+
+  {
+    id: "albania-visit",
+    country: "Albania",
+    flag: "🇦🇱",
+    category: "tourist",
+    type: "Visit Visa",
+    description:
+      "Visit-visa assessment and supporting-document guidance.",
+    highlights: [
+      "Travel-purpose review",
+      "Invitation guidance",
+      "Proof-of-funds checklist",
+      "Accommodation documentation",
+      "Application preparation"
+    ],
+    requirements: [
+      "Valid passport",
+      "Proof of funds",
+      "Travel plan",
+      "Accommodation",
+      "Return-ties evidence",
+      "Invitation where required"
+    ],
+    process:
+      "Eligibility assessment → document preparation → visa submission.",
+    timeline:
+      "Depends on nationality and the responsible Albanian mission.",
+    note:
+      "A complete application does not guarantee approval.",
+    search:
+      "albania visit tourist visa invitation"
+  }
+];
+
+let activePackageFilter = "all";
+
+function packageSafeText(value){
+  return String(value || "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+function buildPackageCard(packageItem){
+  const firstHighlights = packageItem.highlights.slice(0,4);
+
+  const highlightsHtml = firstHighlights.map(function(item){
+    return `
+      <div class="package-mini-item">
+        <span>✓</span>
+        <span>${packageSafeText(item)}</span>
+      </div>
+    `;
+  }).join("");
+
+  const featuredRibbon = packageItem.featured
+    ? `<div class="package-ribbon">FEATURED</div>`
+    : "";
+
+  const whatsappMessage = encodeURIComponent(
+    "Hello TOPELA GLOBAL, I am interested in the " +
+    packageItem.country +
+    " — " +
+    packageItem.type +
+    " package. Please check my eligibility."
+  );
+
+  return `
+    <article
+      class="package-card ${packageItem.featured ? "featured-package" : ""}"
+      data-category="${packageSafeText(packageItem.category)}"
+      data-search="${packageSafeText(
+        (
+          packageItem.country + " " +
+          packageItem.type + " " +
+          packageItem.description + " " +
+          packageItem.search + " " +
+          packageItem.highlights.join(" ")
+        ).toLowerCase()
+      )}">
+
+      ${featuredRibbon}
+
+      <div class="package-card-top">
+        <div class="package-country">
+          <span class="package-flag">${packageItem.flag}</span>
+
+          <div>
+            <h3>${packageSafeText(packageItem.country)}</h3>
+            <span class="package-type">
+              ${packageSafeText(packageItem.type)}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="package-body">
+        <p class="package-description">
+          ${packageSafeText(packageItem.description)}
+        </p>
+
+        <div class="package-mini-list">
+          ${highlightsHtml}
+        </div>
+
+        <div class="package-card-actions">
+          <button
+            type="button"
+            class="package-details-btn"
+            onclick="openPackageModal('${packageSafeText(packageItem.id)}')">
+            View Details
+          </button>
+
+          <a
+            class="package-whatsapp-btn"
+            href="https://wa.me/353871802797?text=${whatsappMessage}"
+            target="_blank"
+            rel="noopener">
+            Ask on WhatsApp
+          </a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderOpportunityPackages(){
+  const packageGrid = document.getElementById("packageGrid");
+  const searchInput = document.getElementById("packageSearch");
+  const resultCount = document.getElementById("packageResultCount");
+
+  if(!packageGrid || !searchInput || !resultCount){
+    return;
+  }
+
+  const searchTerm = searchInput.value.trim().toLowerCase();
+
+  const filteredPackages = opportunityPackages.filter(function(packageItem){
+    const searchableText = (
+      packageItem.country + " " +
+      packageItem.type + " " +
+      packageItem.description + " " +
+      packageItem.search + " " +
+      packageItem.highlights.join(" ")
+    ).toLowerCase();
+
+    const matchesSearch =
+      !searchTerm || searchableText.includes(searchTerm);
+
+    const matchesCategory =
+      activePackageFilter === "all" ||
+      packageItem.category === activePackageFilter;
+
+    return matchesSearch && matchesCategory;
+  });
+
+  resultCount.textContent =
+    filteredPackages.length +
+    (filteredPackages.length === 1
+      ? " package found"
+      : " packages found");
+
+  if(filteredPackages.length === 0){
+    packageGrid.innerHTML = `
+      <div class="package-empty">
+        <h3>No matching package was found</h3>
+        <p>
+          Try another country, job title or programme category.
+        </p>
+        <a href="#candidate-form" class="btn">
+          Request a General Consultation
+        </a>
+      </div>
+    `;
+
+    return;
+  }
+
+  packageGrid.innerHTML =
+    filteredPackages.map(buildPackageCard).join("");
+}
+
+function setPackageFilter(category){
+  activePackageFilter = category;
+
+  const categorySelect = document.getElementById("packageCategory");
+
+  if(categorySelect){
+    categorySelect.value = category;
+  }
+
+  document.querySelectorAll(".package-tab").forEach(function(tab){
+    tab.classList.toggle(
+      "active",
+      tab.dataset.filter === category
+    );
+  });
+
+  renderOpportunityPackages();
+}
+
+function openPackageModal(packageId){
+  const packageItem = opportunityPackages.find(function(item){
+    return item.id === packageId;
+  });
+
+  const modal = document.getElementById("packageModal");
+  const modalBody = document.getElementById("packageModalBody");
+
+  if(!packageItem || !modal || !modalBody){
+    return;
+  }
+
+  const highlightsHtml = packageItem.highlights.map(function(item){
+    return `<li>${packageSafeText(item)}</li>`;
+  }).join("");
+
+  const requirementsHtml = packageItem.requirements.map(function(item){
+    return `<li>${packageSafeText(item)}</li>`;
+  }).join("");
+
+  const whatsappMessage = encodeURIComponent(
+    "Hello TOPELA GLOBAL, I have reviewed the " +
+    packageItem.country +
+    " — " +
+    packageItem.type +
+    " details and I want an eligibility assessment."
+  );
+
+  modalBody.innerHTML = `
+    <div class="package-type">
+      ${packageSafeText(packageItem.type)}
+    </div>
+
+    <h2 class="package-modal-title" id="packageModalTitle">
+      ${packageItem.flag}
+      ${packageSafeText(packageItem.country)}
+    </h2>
+
+    <p>${packageSafeText(packageItem.description)}</p>
+
+    <div class="package-modal-grid">
+      <div class="package-modal-box">
+        <h4>Available opportunities</h4>
+        <ul>${highlightsHtml}</ul>
+      </div>
+
+      <div class="package-modal-box">
+        <h4>General requirements</h4>
+        <ul>${requirementsHtml}</ul>
+      </div>
+
+      <div class="package-modal-box">
+        <h4>Typical process</h4>
+        <p>${packageSafeText(packageItem.process)}</p>
+      </div>
+
+      <div class="package-modal-box">
+        <h4>Indicative timeline</h4>
+        <p>${packageSafeText(packageItem.timeline)}</p>
+      </div>
+    </div>
+
+    <div class="notice">
+      <strong>Important:</strong>
+      ${packageSafeText(packageItem.note)}
+      Requirements and availability must be reconfirmed before payment.
+    </div>
+
+    <div style="margin-top:20px;">
+      <a
+        href="#candidate-form"
+        class="btn"
+        onclick="closePackageModal();selectPackageForApplication('${packageSafeText(packageItem.country)}','${packageSafeText(packageItem.type)}')">
+        Apply for This Package
+      </a>
+
+      <a
+        href="https://wa.me/353871802797?text=${whatsappMessage}"
+        class="btn btn-dark"
+        target="_blank"
+        rel="noopener">
+        Check Eligibility
+      </a>
+    </div>
+  `;
+
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function closePackageModal(){
+  const modal = document.getElementById("packageModal");
+
+  if(modal){
+    modal.classList.remove("open");
+  }
+
+  document.body.style.overflow = "";
+}
+
+function selectPackageForApplication(country, packageType){
+  const formSelector = document.getElementById("formSelector");
+
+  if(!formSelector){
+    return;
+  }
+
+  if(
+    packageType.toLowerCase().includes("study")
+  ){
+    formSelector.value = "studyForm";
+  }else if(
+    packageType.toLowerCase().includes("tourist") ||
+    packageType.toLowerCase().includes("visit")
+  ){
+    formSelector.value = "touristForm";
+  }else{
+    formSelector.value = "workForm";
+  }
+
+  formSelector.dispatchEvent(new Event("change"));
+
+  setTimeout(function(){
+    const visibleForm = document.querySelector(
+      ".candidateForm.active-form"
+    );
+
+    if(!visibleForm){
+      return;
+    }
+
+    const targetCountryInput =
+      visibleForm.querySelector('[name="target_country"]');
+
+    const messageInput =
+      visibleForm.querySelector('[name="message"]');
+
+    if(targetCountryInput){
+      targetCountryInput.value = country;
+    }
+
+    if(messageInput && !messageInput.value){
+      messageInput.value =
+        "I am interested in the " +
+        country +
+        " — " +
+        packageType +
+        " package. Please assess my eligibility and send the current requirements.";
+    }
+  },150);
+}
+
+function prepareSerbiaApplication(){
+  setTimeout(function(){
+    selectPackageForApplication(
+      "Serbia",
+      "Work Permit & Visa"
+    );
+  },150);
+}
+
+function initialiseSerbiaAttention(){
+  const attentionBar =
+    document.getElementById("serbiaAttentionBar");
+
+  const closeButton =
+    document.getElementById("serbiaAttentionClose");
+
+  const attentionLink =
+    document.getElementById("serbiaAttentionLink");
+
+  if(!attentionBar || !closeButton){
+    return;
+  }
+
+  const hasDismissed =
+    sessionStorage.getItem("serbiaAttentionDismissed");
+
+  if(!hasDismissed){
+    setTimeout(function(){
+      attentionBar.classList.add("show");
+    },4500);
+  }
+
+  closeButton.addEventListener("click",function(){
+    attentionBar.classList.remove("show");
+    sessionStorage.setItem(
+      "serbiaAttentionDismissed",
+      "yes"
+    );
+  });
+
+  if(attentionLink){
+    attentionLink.addEventListener("click",function(){
+      attentionBar.classList.remove("show");
+      sessionStorage.setItem(
+        "serbiaAttentionDismissed",
+        "yes"
+      );
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+  const packageSearch =
+    document.getElementById("packageSearch");
+
+  const packageCategory =
+    document.getElementById("packageCategory");
+
+  const packageModal =
+    document.getElementById("packageModal");
+
+  const packageModalClose =
+    document.getElementById("packageModalClose");
+
+  if(packageSearch){
+    packageSearch.addEventListener(
+      "input",
+      renderOpportunityPackages
+    );
+  }
+
+  if(packageCategory){
+    packageCategory.addEventListener("change",function(){
+      setPackageFilter(this.value);
+    });
+  }
+
+  document.querySelectorAll(".package-tab").forEach(function(tab){
+    tab.addEventListener("click",function(){
+      setPackageFilter(this.dataset.filter);
+    });
+  });
+
+  if(packageModalClose){
+    packageModalClose.addEventListener(
+      "click",
+      closePackageModal
+    );
+  }
+
+  if(packageModal){
+    packageModal.addEventListener("click",function(event){
+      if(event.target === packageModal){
+        closePackageModal();
+      }
+    });
+  }
+
+  document.addEventListener("keydown",function(event){
+    if(event.key === "Escape"){
+      closePackageModal();
+    }
+  });
+
+  renderOpportunityPackages();
+  initialiseSerbiaAttention();
 });
 </script>
 
